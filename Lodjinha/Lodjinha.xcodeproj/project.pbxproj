@@ -1,0 +1,757 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6D12A2A1E86F7F752E2D084F /* Pods_Lodjinha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76C045CABBD6A0EF1A913384 /* Pods_Lodjinha.framework */; };
+		802D990F22B7B69D006F1A57 /* Pacifico-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 802D990E22B7B69D006F1A57 /* Pacifico-Regular.ttf */; };
+		802D991422B7D991006F1A57 /* NetworkManeger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802D991322B7D991006F1A57 /* NetworkManeger.swift */; };
+		802D991622B7DAEF006F1A57 /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802D991522B7DAEF006F1A57 /* Banner.swift */; };
+		802D991A22B7DB23006F1A57 /* Categoria.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802D991922B7DB23006F1A57 /* Categoria.swift */; };
+		802D991C22B7DB37006F1A57 /* Produto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802D991B22B7DB37006F1A57 /* Produto.swift */; };
+		802D991E22B7DBBE006F1A57 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802D991D22B7DBBE006F1A57 /* Constants.swift */; };
+		80B52AD622B61428009E8A4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B52AD522B61428009E8A4E /* AppDelegate.swift */; };
+		80B52AD822B61428009E8A4E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B52AD722B61428009E8A4E /* ViewController.swift */; };
+		80B52ADB22B61428009E8A4E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80B52AD922B61428009E8A4E /* Main.storyboard */; };
+		80B52ADE22B61428009E8A4E /* Lodjinha.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 80B52ADC22B61428009E8A4E /* Lodjinha.xcdatamodeld */; };
+		80B52AE022B61429009E8A4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80B52ADF22B61429009E8A4E /* Assets.xcassets */; };
+		80B52AE322B61429009E8A4E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80B52AE122B61429009E8A4E /* LaunchScreen.storyboard */; };
+		80B52AEE22B61429009E8A4E /* LodjinhaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B52AED22B61429009E8A4E /* LodjinhaTests.swift */; };
+		80B52AF922B61429009E8A4E /* LodjinhaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B52AF822B61429009E8A4E /* LodjinhaUITests.swift */; };
+		80B52B0D22B616A6009E8A4E /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B52B0722B616A6009E8A4E /* HomePresenter.swift */; };
+		80B52B0E22B616A6009E8A4E /* HomeWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B52B0822B616A6009E8A4E /* HomeWorker.swift */; };
+		80B52B0F22B616A6009E8A4E /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B52B0922B616A6009E8A4E /* HomeRouter.swift */; };
+		80B52B1022B616A6009E8A4E /* HomeModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B52B0A22B616A6009E8A4E /* HomeModels.swift */; };
+		80B52B1122B616A6009E8A4E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B52B0B22B616A6009E8A4E /* HomeViewController.swift */; };
+		80B52B1222B616A6009E8A4E /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B52B0C22B616A6009E8A4E /* HomeInteractor.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		80B52AEA22B61429009E8A4E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 80B52ACA22B61428009E8A4E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 80B52AD122B61428009E8A4E;
+			remoteInfo = Lodjinha;
+		};
+		80B52AF522B61429009E8A4E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 80B52ACA22B61428009E8A4E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 80B52AD122B61428009E8A4E;
+			remoteInfo = Lodjinha;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		76C045CABBD6A0EF1A913384 /* Pods_Lodjinha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lodjinha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		802D990E22B7B69D006F1A57 /* Pacifico-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pacifico-Regular.ttf"; sourceTree = "<group>"; };
+		802D991322B7D991006F1A57 /* NetworkManeger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManeger.swift; sourceTree = "<group>"; };
+		802D991522B7DAEF006F1A57 /* Banner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banner.swift; sourceTree = "<group>"; };
+		802D991922B7DB23006F1A57 /* Categoria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categoria.swift; sourceTree = "<group>"; };
+		802D991B22B7DB37006F1A57 /* Produto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Produto.swift; sourceTree = "<group>"; };
+		802D991D22B7DBBE006F1A57 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		80B52AD222B61428009E8A4E /* Lodjinha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lodjinha.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		80B52AD522B61428009E8A4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		80B52AD722B61428009E8A4E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		80B52ADA22B61428009E8A4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		80B52ADD22B61428009E8A4E /* Lodjinha.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Lodjinha.xcdatamodel; sourceTree = "<group>"; };
+		80B52ADF22B61429009E8A4E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		80B52AE222B61429009E8A4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		80B52AE422B61429009E8A4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		80B52AE922B61429009E8A4E /* LodjinhaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LodjinhaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		80B52AED22B61429009E8A4E /* LodjinhaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LodjinhaTests.swift; sourceTree = "<group>"; };
+		80B52AEF22B61429009E8A4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		80B52AF422B61429009E8A4E /* LodjinhaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LodjinhaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		80B52AF822B61429009E8A4E /* LodjinhaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LodjinhaUITests.swift; sourceTree = "<group>"; };
+		80B52AFA22B61429009E8A4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		80B52B0722B616A6009E8A4E /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		80B52B0822B616A6009E8A4E /* HomeWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWorker.swift; sourceTree = "<group>"; };
+		80B52B0922B616A6009E8A4E /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		80B52B0A22B616A6009E8A4E /* HomeModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModels.swift; sourceTree = "<group>"; };
+		80B52B0B22B616A6009E8A4E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		80B52B0C22B616A6009E8A4E /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		B3D958001A862F219CE06F1D /* Pods-Lodjinha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lodjinha.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Lodjinha/Pods-Lodjinha.debug.xcconfig"; sourceTree = "<group>"; };
+		B71AD5BF0433AF843C38E6EA /* Pods-Lodjinha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lodjinha.release.xcconfig"; path = "Pods/Target Support Files/Pods-Lodjinha/Pods-Lodjinha.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		80B52ACF22B61428009E8A4E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D12A2A1E86F7F752E2D084F /* Pods_Lodjinha.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80B52AE622B61429009E8A4E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80B52AF122B61429009E8A4E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5697E793606AC9FE2B2EB5D0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B3D958001A862F219CE06F1D /* Pods-Lodjinha.debug.xcconfig */,
+				B71AD5BF0433AF843C38E6EA /* Pods-Lodjinha.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		802D991022B7D8F4006F1A57 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				802D991D22B7DBBE006F1A57 /* Constants.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		802D991122B7D95C006F1A57 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				802D991222B7D976006F1A57 /* Model */,
+				802D991322B7D991006F1A57 /* NetworkManeger.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		802D991222B7D976006F1A57 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				802D991522B7DAEF006F1A57 /* Banner.swift */,
+				802D991922B7DB23006F1A57 /* Categoria.swift */,
+				802D991B22B7DB37006F1A57 /* Produto.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		80B52AC922B61428009E8A4E = {
+			isa = PBXGroup;
+			children = (
+				80B52AD422B61428009E8A4E /* Lodjinha */,
+				80B52AEC22B61429009E8A4E /* LodjinhaTests */,
+				80B52AF722B61429009E8A4E /* LodjinhaUITests */,
+				80B52AD322B61428009E8A4E /* Products */,
+				5697E793606AC9FE2B2EB5D0 /* Pods */,
+				80DB89ECCB7592316E6FDF8F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		80B52AD322B61428009E8A4E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				80B52AD222B61428009E8A4E /* Lodjinha.app */,
+				80B52AE922B61429009E8A4E /* LodjinhaTests.xctest */,
+				80B52AF422B61429009E8A4E /* LodjinhaUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		80B52AD422B61428009E8A4E /* Lodjinha */ = {
+			isa = PBXGroup;
+			children = (
+				802D991122B7D95C006F1A57 /* Network */,
+				802D991022B7D8F4006F1A57 /* Utilities */,
+				80B52B0622B6168F009E8A4E /* Scenes */,
+				80B52AD522B61428009E8A4E /* AppDelegate.swift */,
+				80B52AD722B61428009E8A4E /* ViewController.swift */,
+				80B52AD922B61428009E8A4E /* Main.storyboard */,
+				80B52ADF22B61429009E8A4E /* Assets.xcassets */,
+				802D990E22B7B69D006F1A57 /* Pacifico-Regular.ttf */,
+				80B52AE122B61429009E8A4E /* LaunchScreen.storyboard */,
+				80B52AE422B61429009E8A4E /* Info.plist */,
+				80B52ADC22B61428009E8A4E /* Lodjinha.xcdatamodeld */,
+			);
+			path = Lodjinha;
+			sourceTree = "<group>";
+		};
+		80B52AEC22B61429009E8A4E /* LodjinhaTests */ = {
+			isa = PBXGroup;
+			children = (
+				80B52AED22B61429009E8A4E /* LodjinhaTests.swift */,
+				80B52AEF22B61429009E8A4E /* Info.plist */,
+			);
+			path = LodjinhaTests;
+			sourceTree = "<group>";
+		};
+		80B52AF722B61429009E8A4E /* LodjinhaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				80B52AF822B61429009E8A4E /* LodjinhaUITests.swift */,
+				80B52AFA22B61429009E8A4E /* Info.plist */,
+			);
+			path = LodjinhaUITests;
+			sourceTree = "<group>";
+		};
+		80B52B0622B6168F009E8A4E /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				80B52B0722B616A6009E8A4E /* HomePresenter.swift */,
+				80B52B0822B616A6009E8A4E /* HomeWorker.swift */,
+				80B52B0922B616A6009E8A4E /* HomeRouter.swift */,
+				80B52B0A22B616A6009E8A4E /* HomeModels.swift */,
+				80B52B0B22B616A6009E8A4E /* HomeViewController.swift */,
+				80B52B0C22B616A6009E8A4E /* HomeInteractor.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		80DB89ECCB7592316E6FDF8F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				76C045CABBD6A0EF1A913384 /* Pods_Lodjinha.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		80B52AD122B61428009E8A4E /* Lodjinha */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 80B52AFD22B61429009E8A4E /* Build configuration list for PBXNativeTarget "Lodjinha" */;
+			buildPhases = (
+				D8A3A9175291FA49896352DB /* [CP] Check Pods Manifest.lock */,
+				80B52ACE22B61428009E8A4E /* Sources */,
+				80B52ACF22B61428009E8A4E /* Frameworks */,
+				80B52AD022B61428009E8A4E /* Resources */,
+				2F97585226547FA63CF35E44 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Lodjinha;
+			productName = Lodjinha;
+			productReference = 80B52AD222B61428009E8A4E /* Lodjinha.app */;
+			productType = "com.apple.product-type.application";
+		};
+		80B52AE822B61429009E8A4E /* LodjinhaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 80B52B0022B61429009E8A4E /* Build configuration list for PBXNativeTarget "LodjinhaTests" */;
+			buildPhases = (
+				80B52AE522B61429009E8A4E /* Sources */,
+				80B52AE622B61429009E8A4E /* Frameworks */,
+				80B52AE722B61429009E8A4E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				80B52AEB22B61429009E8A4E /* PBXTargetDependency */,
+			);
+			name = LodjinhaTests;
+			productName = LodjinhaTests;
+			productReference = 80B52AE922B61429009E8A4E /* LodjinhaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		80B52AF322B61429009E8A4E /* LodjinhaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 80B52B0322B61429009E8A4E /* Build configuration list for PBXNativeTarget "LodjinhaUITests" */;
+			buildPhases = (
+				80B52AF022B61429009E8A4E /* Sources */,
+				80B52AF122B61429009E8A4E /* Frameworks */,
+				80B52AF222B61429009E8A4E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				80B52AF622B61429009E8A4E /* PBXTargetDependency */,
+			);
+			name = LodjinhaUITests;
+			productName = LodjinhaUITests;
+			productReference = 80B52AF422B61429009E8A4E /* LodjinhaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		80B52ACA22B61428009E8A4E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = ely.assumpcao.ndiaye;
+				TargetAttributes = {
+					80B52AD122B61428009E8A4E = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					80B52AE822B61429009E8A4E = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 80B52AD122B61428009E8A4E;
+					};
+					80B52AF322B61429009E8A4E = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 80B52AD122B61428009E8A4E;
+					};
+				};
+			};
+			buildConfigurationList = 80B52ACD22B61428009E8A4E /* Build configuration list for PBXProject "Lodjinha" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 80B52AC922B61428009E8A4E;
+			productRefGroup = 80B52AD322B61428009E8A4E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				80B52AD122B61428009E8A4E /* Lodjinha */,
+				80B52AE822B61429009E8A4E /* LodjinhaTests */,
+				80B52AF322B61429009E8A4E /* LodjinhaUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		80B52AD022B61428009E8A4E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80B52AE322B61429009E8A4E /* LaunchScreen.storyboard in Resources */,
+				802D990F22B7B69D006F1A57 /* Pacifico-Regular.ttf in Resources */,
+				80B52AE022B61429009E8A4E /* Assets.xcassets in Resources */,
+				80B52ADB22B61428009E8A4E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80B52AE722B61429009E8A4E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80B52AF222B61429009E8A4E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2F97585226547FA63CF35E44 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Lodjinha/Pods-Lodjinha-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Lodjinha/Pods-Lodjinha-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D8A3A9175291FA49896352DB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Lodjinha-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		80B52ACE22B61428009E8A4E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80B52ADE22B61428009E8A4E /* Lodjinha.xcdatamodeld in Sources */,
+				80B52B0F22B616A6009E8A4E /* HomeRouter.swift in Sources */,
+				80B52AD822B61428009E8A4E /* ViewController.swift in Sources */,
+				80B52B1122B616A6009E8A4E /* HomeViewController.swift in Sources */,
+				802D991622B7DAEF006F1A57 /* Banner.swift in Sources */,
+				802D991A22B7DB23006F1A57 /* Categoria.swift in Sources */,
+				80B52AD622B61428009E8A4E /* AppDelegate.swift in Sources */,
+				80B52B0E22B616A6009E8A4E /* HomeWorker.swift in Sources */,
+				80B52B1222B616A6009E8A4E /* HomeInteractor.swift in Sources */,
+				802D991C22B7DB37006F1A57 /* Produto.swift in Sources */,
+				80B52B0D22B616A6009E8A4E /* HomePresenter.swift in Sources */,
+				802D991E22B7DBBE006F1A57 /* Constants.swift in Sources */,
+				802D991422B7D991006F1A57 /* NetworkManeger.swift in Sources */,
+				80B52B1022B616A6009E8A4E /* HomeModels.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80B52AE522B61429009E8A4E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80B52AEE22B61429009E8A4E /* LodjinhaTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80B52AF022B61429009E8A4E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				80B52AF922B61429009E8A4E /* LodjinhaUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		80B52AEB22B61429009E8A4E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 80B52AD122B61428009E8A4E /* Lodjinha */;
+			targetProxy = 80B52AEA22B61429009E8A4E /* PBXContainerItemProxy */;
+		};
+		80B52AF622B61429009E8A4E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 80B52AD122B61428009E8A4E /* Lodjinha */;
+			targetProxy = 80B52AF522B61429009E8A4E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		80B52AD922B61428009E8A4E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				80B52ADA22B61428009E8A4E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		80B52AE122B61429009E8A4E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				80B52AE222B61429009E8A4E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		80B52AFB22B61429009E8A4E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		80B52AFC22B61429009E8A4E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		80B52AFE22B61429009E8A4E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B3D958001A862F219CE06F1D /* Pods-Lodjinha.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8Z29YW6SJ7;
+				INFOPLIST_FILE = Lodjinha/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Lodjinha;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		80B52AFF22B61429009E8A4E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B71AD5BF0433AF843C38E6EA /* Pods-Lodjinha.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8Z29YW6SJ7;
+				INFOPLIST_FILE = Lodjinha/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Lodjinha;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		80B52B0122B61429009E8A4E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8Z29YW6SJ7;
+				INFOPLIST_FILE = LodjinhaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.LodjinhaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Lodjinha.app/Lodjinha";
+			};
+			name = Debug;
+		};
+		80B52B0222B61429009E8A4E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8Z29YW6SJ7;
+				INFOPLIST_FILE = LodjinhaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.LodjinhaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Lodjinha.app/Lodjinha";
+			};
+			name = Release;
+		};
+		80B52B0422B61429009E8A4E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8Z29YW6SJ7;
+				INFOPLIST_FILE = LodjinhaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.LodjinhaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Lodjinha;
+			};
+			name = Debug;
+		};
+		80B52B0522B61429009E8A4E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8Z29YW6SJ7;
+				INFOPLIST_FILE = LodjinhaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.LodjinhaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Lodjinha;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		80B52ACD22B61428009E8A4E /* Build configuration list for PBXProject "Lodjinha" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80B52AFB22B61429009E8A4E /* Debug */,
+				80B52AFC22B61429009E8A4E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		80B52AFD22B61429009E8A4E /* Build configuration list for PBXNativeTarget "Lodjinha" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80B52AFE22B61429009E8A4E /* Debug */,
+				80B52AFF22B61429009E8A4E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		80B52B0022B61429009E8A4E /* Build configuration list for PBXNativeTarget "LodjinhaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80B52B0122B61429009E8A4E /* Debug */,
+				80B52B0222B61429009E8A4E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		80B52B0322B61429009E8A4E /* Build configuration list for PBXNativeTarget "LodjinhaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80B52B0422B61429009E8A4E /* Debug */,
+				80B52B0522B61429009E8A4E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		80B52ADC22B61428009E8A4E /* Lodjinha.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				80B52ADD22B61428009E8A4E /* Lodjinha.xcdatamodel */,
+			);
+			currentVersion = 80B52ADD22B61428009E8A4E /* Lodjinha.xcdatamodel */;
+			path = Lodjinha.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 80B52ACA22B61428009E8A4E /* Project object */;
+}

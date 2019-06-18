@@ -2,15 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "logoSobre_3.png",
+      "filename" : "logoNavbar.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "logoNavbar@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
+      "filename" : "logoNavbar@3x.png",
       "scale" : "3x"
     }
   ],

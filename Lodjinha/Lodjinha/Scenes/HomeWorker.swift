@@ -21,4 +21,11 @@ class HomeWorker
         }
     }
     
+    func fetchCategory(completionHandler: @escaping ([Categoria]) -> Void){
+        print("Chamou Banners")
+        NetworkManager.shared.getCategory{ categories in
+            completionHandler(categories)
+        }
+    }
+    
 }

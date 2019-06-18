@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6D12A2A1E86F7F752E2D084F /* Pods_Lodjinha.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76C045CABBD6A0EF1A913384 /* Pods_Lodjinha.framework */; };
+		8023FDD222B936AF00C8E595 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8023FDD122B936AF00C8E595 /* Assets.xcassets */; };
 		802D990F22B7B69D006F1A57 /* Pacifico-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 802D990E22B7B69D006F1A57 /* Pacifico-Regular.ttf */; };
 		802D991422B7D991006F1A57 /* NetworkManeger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802D991322B7D991006F1A57 /* NetworkManeger.swift */; };
 		802D991622B7DAEF006F1A57 /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802D991522B7DAEF006F1A57 /* Banner.swift */; };
@@ -19,7 +20,6 @@
 		80B52AD822B61428009E8A4E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B52AD722B61428009E8A4E /* ViewController.swift */; };
 		80B52ADB22B61428009E8A4E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80B52AD922B61428009E8A4E /* Main.storyboard */; };
 		80B52ADE22B61428009E8A4E /* Lodjinha.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 80B52ADC22B61428009E8A4E /* Lodjinha.xcdatamodeld */; };
-		80B52AE022B61429009E8A4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80B52ADF22B61429009E8A4E /* Assets.xcassets */; };
 		80B52AE322B61429009E8A4E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80B52AE122B61429009E8A4E /* LaunchScreen.storyboard */; };
 		80B52AEE22B61429009E8A4E /* LodjinhaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B52AED22B61429009E8A4E /* LodjinhaTests.swift */; };
 		80B52AF922B61429009E8A4E /* LodjinhaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B52AF822B61429009E8A4E /* LodjinhaUITests.swift */; };
@@ -29,6 +29,7 @@
 		80B52B1022B616A6009E8A4E /* HomeModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B52B0A22B616A6009E8A4E /* HomeModels.swift */; };
 		80B52B1122B616A6009E8A4E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B52B0B22B616A6009E8A4E /* HomeViewController.swift */; };
 		80B52B1222B616A6009E8A4E /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B52B0C22B616A6009E8A4E /* HomeInteractor.swift */; };
+		80B5BC9C22B95627005444FB /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B5BC9B22B95627005444FB /* CategoryCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 
 /* Begin PBXFileReference section */
 		76C045CABBD6A0EF1A913384 /* Pods_Lodjinha.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lodjinha.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8023FDD122B936AF00C8E595 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		802D990E22B7B69D006F1A57 /* Pacifico-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pacifico-Regular.ttf"; sourceTree = "<group>"; };
 		802D991322B7D991006F1A57 /* NetworkManeger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManeger.swift; sourceTree = "<group>"; };
 		802D991522B7DAEF006F1A57 /* Banner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banner.swift; sourceTree = "<group>"; };
@@ -62,7 +64,6 @@
 		80B52AD722B61428009E8A4E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		80B52ADA22B61428009E8A4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		80B52ADD22B61428009E8A4E /* Lodjinha.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Lodjinha.xcdatamodel; sourceTree = "<group>"; };
-		80B52ADF22B61429009E8A4E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		80B52AE222B61429009E8A4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		80B52AE422B61429009E8A4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80B52AE922B61429009E8A4E /* LodjinhaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LodjinhaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,6 +78,7 @@
 		80B52B0A22B616A6009E8A4E /* HomeModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModels.swift; sourceTree = "<group>"; };
 		80B52B0B22B616A6009E8A4E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		80B52B0C22B616A6009E8A4E /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		80B5BC9B22B95627005444FB /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		B3D958001A862F219CE06F1D /* Pods-Lodjinha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lodjinha.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Lodjinha/Pods-Lodjinha.debug.xcconfig"; sourceTree = "<group>"; };
 		B71AD5BF0433AF843C38E6EA /* Pods-Lodjinha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lodjinha.release.xcconfig"; path = "Pods/Target Support Files/Pods-Lodjinha/Pods-Lodjinha.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -155,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				809D8DBA22B900D400B2C6FE /* BannerCell.swift */,
+				80B5BC9B22B95627005444FB /* CategoryCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -188,9 +191,9 @@
 				802D991022B7D8F4006F1A57 /* Utilities */,
 				80B52B0622B6168F009E8A4E /* Scenes */,
 				80B52AD522B61428009E8A4E /* AppDelegate.swift */,
+				8023FDD122B936AF00C8E595 /* Assets.xcassets */,
 				80B52AD722B61428009E8A4E /* ViewController.swift */,
 				80B52AD922B61428009E8A4E /* Main.storyboard */,
-				80B52ADF22B61429009E8A4E /* Assets.xcassets */,
 				802D990E22B7B69D006F1A57 /* Pacifico-Regular.ttf */,
 				80B52AE122B61429009E8A4E /* LaunchScreen.storyboard */,
 				80B52AE422B61429009E8A4E /* Info.plist */,
@@ -347,7 +350,7 @@
 			files = (
 				80B52AE322B61429009E8A4E /* LaunchScreen.storyboard in Resources */,
 				802D990F22B7B69D006F1A57 /* Pacifico-Regular.ttf in Resources */,
-				80B52AE022B61429009E8A4E /* Assets.xcassets in Resources */,
+				8023FDD222B936AF00C8E595 /* Assets.xcassets in Resources */,
 				80B52ADB22B61428009E8A4E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -427,6 +430,7 @@
 				80B52B1222B616A6009E8A4E /* HomeInteractor.swift in Sources */,
 				802D991C22B7DB37006F1A57 /* Produto.swift in Sources */,
 				80B52B0D22B616A6009E8A4E /* HomePresenter.swift in Sources */,
+				80B5BC9C22B95627005444FB /* CategoryCell.swift in Sources */,
 				809D8DBB22B900D400B2C6FE /* BannerCell.swift in Sources */,
 				802D991E22B7DBBE006F1A57 /* Constants.swift in Sources */,
 				802D991422B7D991006F1A57 /* NetworkManeger.swift in Sources */,

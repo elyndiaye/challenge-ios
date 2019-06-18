@@ -23,6 +23,9 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
     
     
     @IBOutlet weak var bannerCollectionView: UICollectionView!
+    @IBOutlet weak var categoryCollectionView: UICollectionView!
+    
+    
     @IBOutlet weak var pageView: UIPageControl!
     
     
@@ -85,6 +88,7 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
     {
         super.viewDidLoad()
         
+        addNavBarImage()
         // loadInitalData()
         
         pageView.numberOfPages = bannerArray.count
@@ -96,6 +100,11 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
         
         
     }
+    
+    func addNavBarImage() {
+        let logo = UIImage(named: "logoNavbar_2")
+        let imageView = UIImageView(image:logo)
+        self.navigationItem.titleView = imageView }
     
     // MARK: Do something
     

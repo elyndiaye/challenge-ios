@@ -13,31 +13,8 @@ import SwiftyJSON
 class NetworkManager {
     static let shared = NetworkManager()
     
-    private let baseURL = "https://jsonplaceholder.typicode.com"
     private init() {}
     
-   /* func getPosts(completionHandler: @escaping ([Banner]) -> Void ) {
-        
-        let url = URL(string: baseURL + "/posts")!
-        
-        let dataTask = URLSession.shared.dataTask(with: url) { (data, response, error) in
-            let arrayUserAccounts = [Banner]()
-            
-            DispatchQueue.main.async {
-                if let data = data {
-                    let decoder = JSONDecoder()
-                    do {
-                      //  let decodedPosts = try decoder.decode([UserAccount].self, from: data)
-                        completionHandler(decodedPosts)
-                    } catch {
-                        completionHandler(arrayUserAccounts)
-                    }
-                }
-            }
-        }
-        
-        dataTask.resume()
-    } */
     
     //user: String, pass: String
     func loginUser(user: String, pass: String, completionHandler: @escaping ([Banner]) -> Void ) {
@@ -59,12 +36,12 @@ class NetworkManager {
                 
                 do {
                     let decoder = JSONDecoder()
-        //            let decodedUserAcconts = try decoder.decode(UserAccount.self, from: data)
-       //             print(decodedUserAcconts.userAccount.userId)
+                    //            let decodedUserAcconts = try decoder.decode(UserAccount.self, from: data)
+                    //             print(decodedUserAcconts.userAccount.userId)
                     
                     // let userAccount = try? newJSONDecoder().decode(UserAccount.self, from: jsonData)
                     
-      //              completionHandler([decodedUserAcconts])
+                    //              completionHandler([decodedUserAcconts])
                     //   print(completionHandler(decodedUserAcconts))
                 } catch let error {
                     print(error)
@@ -94,7 +71,7 @@ class NetworkManager {
                     let decoder = JSONDecoder()
                     let decodedBanners = try decoder.decode(Banner.self, from: data)
                     
-                    print(decodedBanners)
+                    //print(decodedBanners)
                     //print(decodedStatements.statementList[0].title,.data[0].urlImagem)
                     
                     
@@ -114,4 +91,38 @@ class NetworkManager {
         } // FIM DA
         
     }
+    
+    func getCategory(completionHandler: @escaping ([Categoria]) -> Void ) {
+        Alamofire.request(URL_CATEGORIA, method: .get, parameters: nil, encoding: JSONEncoding.default).responseJSON { (response:DataResponse<Any>) in
+            
+            let arrayCategories = [Categoria]()
+            
+            if response.result.error == nil {
+                guard let data = response.data else { return }
+                print(response.result.value)
+                
+                do {
+                    let decoder = JSONDecoder()
+                    let decodedCategories = try decoder.decode(Categoria.self, from: data)
+                    
+                    print(decodedCategories)
+                    //print(decodedStatements.statementList[0].title,.data[0].urlImagem)
+                    
+                    
+                    completionHandler([decodedCategories])
+                    //completion(true)
+                    //   print(completionHandler(decodedUserAcconts))
+                } catch let error {
+                    print(error)
+                    completionHandler(arrayCategories)
+                    debugPrint(response.result.error as Any)
+                }
+            } else {
+                //  completion(false)
+                debugPrint(response.result.error as Any)
+            }
+            
+        } // FIM DA
+    }
+    
 }

@@ -36,14 +36,14 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="CmX-BN-5bc">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="bannerCell" id="CmX-BN-5bc" customClass="BannerCell" customModule="Lodjinha" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="7.5" width="372" height="135"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="372" height="135"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" tag="111" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Angelina Jolie" translatesAutoresizingMaskIntoConstraints="NO" id="5FN-g4-Rqb">
+                                                <imageView userInteractionEnabled="NO" tag="111" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5FN-g4-Rqb">
                                                     <rect key="frame" x="0.0" y="0.0" width="372" height="135"/>
                                                 </imageView>
                                             </subviews>
@@ -54,6 +54,9 @@
                                             <constraint firstAttribute="bottom" secondItem="5FN-g4-Rqb" secondAttribute="bottom" id="gp0-D0-zcE"/>
                                             <constraint firstItem="5FN-g4-Rqb" firstAttribute="top" secondItem="CmX-BN-5bc" secondAttribute="top" id="yLx-zo-SJf"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="bannerImage" destination="5FN-g4-Rqb" id="8d6-c2-78I"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -224,7 +227,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Angelina Jolie" width="768" height="511"/>
         <image name="homeActive_1" width="13" height="12"/>
         <image name="homeDeselected_1" width="13" height="12"/>
         <image name="tagDeselected_1" width="13" height="13"/>

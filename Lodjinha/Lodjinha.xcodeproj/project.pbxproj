@@ -14,6 +14,7 @@
 		802D991A22B7DB23006F1A57 /* Categoria.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802D991922B7DB23006F1A57 /* Categoria.swift */; };
 		802D991C22B7DB37006F1A57 /* Produto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802D991B22B7DB37006F1A57 /* Produto.swift */; };
 		802D991E22B7DBBE006F1A57 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802D991D22B7DBBE006F1A57 /* Constants.swift */; };
+		809D8DBB22B900D400B2C6FE /* BannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809D8DBA22B900D400B2C6FE /* BannerCell.swift */; };
 		80B52AD622B61428009E8A4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B52AD522B61428009E8A4E /* AppDelegate.swift */; };
 		80B52AD822B61428009E8A4E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B52AD722B61428009E8A4E /* ViewController.swift */; };
 		80B52ADB22B61428009E8A4E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80B52AD922B61428009E8A4E /* Main.storyboard */; };
@@ -55,6 +56,7 @@
 		802D991922B7DB23006F1A57 /* Categoria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categoria.swift; sourceTree = "<group>"; };
 		802D991B22B7DB37006F1A57 /* Produto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Produto.swift; sourceTree = "<group>"; };
 		802D991D22B7DBBE006F1A57 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		809D8DBA22B900D400B2C6FE /* BannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCell.swift; sourceTree = "<group>"; };
 		80B52AD222B61428009E8A4E /* Lodjinha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lodjinha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80B52AD522B61428009E8A4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80B52AD722B61428009E8A4E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -141,6 +143,22 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		809D8DB822B9000400B2C6FE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				809D8DB922B9004400B2C6FE /* Cells */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		809D8DB922B9004400B2C6FE /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				809D8DBA22B900D400B2C6FE /* BannerCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		80B52AC922B61428009E8A4E = {
 			isa = PBXGroup;
 			children = (
@@ -202,6 +220,7 @@
 		80B52B0622B6168F009E8A4E /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				809D8DB822B9000400B2C6FE /* View */,
 				80B52B0722B616A6009E8A4E /* HomePresenter.swift */,
 				80B52B0822B616A6009E8A4E /* HomeWorker.swift */,
 				80B52B0922B616A6009E8A4E /* HomeRouter.swift */,
@@ -358,11 +377,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Lodjinha/Pods-Lodjinha-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -406,6 +427,7 @@
 				80B52B1222B616A6009E8A4E /* HomeInteractor.swift in Sources */,
 				802D991C22B7DB37006F1A57 /* Produto.swift in Sources */,
 				80B52B0D22B616A6009E8A4E /* HomePresenter.swift in Sources */,
+				809D8DBB22B900D400B2C6FE /* BannerCell.swift in Sources */,
 				802D991E22B7DBBE006F1A57 /* Constants.swift in Sources */,
 				802D991422B7D991006F1A57 /* NetworkManeger.swift in Sources */,
 				80B52B1022B616A6009E8A4E /* HomeModels.swift in Sources */,

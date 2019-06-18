@@ -93,8 +93,9 @@ class NetworkManager {
                 do {
                     let decoder = JSONDecoder()
                     let decodedBanners = try decoder.decode(Banner.self, from: data)
-                    print(decodedBanners.data[0].urlImagem)
+                    
                     print(decodedBanners)
+                    //print(decodedStatements.statementList[0].title,.data[0].urlImagem)
                     
                     
                     completionHandler([decodedBanners])

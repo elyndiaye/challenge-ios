@@ -11,119 +11,152 @@
 //
 
 import UIKit
+import Kingfisher
 
-protocol HomeDisplayLogic: class
-{
-  func displayInitialDatas(viewModel: HomeScenes.Load.ViewModel)
+
+protocol HomeDisplayLogic: class {
+    
+    func displayInitialDatas(viewModel: HomeScenes.Load.ViewModel)
 }
 
-class HomeViewController: UIViewController, HomeDisplayLogic
-{
+class HomeViewController: UIViewController, HomeDisplayLogic {
     
-  
+    
     @IBOutlet weak var bannerCollectionView: UICollectionView!
     @IBOutlet weak var pageView: UIPageControl!
     
     
-  var interactor: HomeBusinessLogic?
-  var router: (NSObjectProtocol & HomeRoutingLogic & HomeDataPassing)?
+    var interactor: HomeBusinessLogic?
+    var router: (NSObjectProtocol & HomeRoutingLogic & HomeDataPassing)?
     var bannerArray = [  UIImage(named:"Alexandra Daddario"),
-                    UIImage(named:"Angelina Jolie") ,
-                    UIImage(named:"Anne Hathaway") ,
-                    UIImage(named:"Dakota Johnson") ]
+                         UIImage(named:"Angelina Jolie") ,
+                         UIImage(named:"Anne Hathaway") ]
     var arrayBanners = [Banner]()
-
-  // MARK: Object lifecycle
-  
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
-  {
-    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    setup()
-  }
-  
-  required init?(coder aDecoder: NSCoder)
-  {
-    super.init(coder: aDecoder)
-    setup()
-  }
-  
-  // MARK: Setup
-  
-  private func setup()
-  {
-    let viewController = self
-    let interactor = HomeInteractor()
-    let presenter = HomePresenter()
-    let router = HomeRouter()
-    viewController.interactor = interactor
-    viewController.router = router
-    interactor.presenter = presenter
-    presenter.viewController = viewController
-    router.viewController = viewController
-    router.dataStore = interactor
-  }
-  
-  // MARK: Routing
-  
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-  {
-    if let scene = segue.identifier {
-      let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-      if let router = router, router.responds(to: selector) {
-        router.perform(selector, with: segue)
-      }
+    
+    // MARK: Object lifecycle
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
+    {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
     }
-  }
-  
-  // MARK: View lifecycle
-  
-  override func viewDidLoad()
-  {
-    super.viewDidLoad()
-    loadInitalData()
     
-    pageView.numberOfPages = bannerArray.count
-    pageView.currentPage = 0
+    required init?(coder aDecoder: NSCoder)
+    {
+        super.init(coder: aDecoder)
+        setup()
+    }
     
-    bannerCollectionView.dataSource = self
-    bannerCollectionView.delegate = self
+    // MARK: Setup
     
-  }
-  
-  // MARK: Do something
-  
-  //@IBOutlet weak var nameTextField: UITextField!
-  
-  func loadInitalData()
-  {
-    let request = HomeScenes.Load.Request()
-    interactor?.doLoadInitialData(request: request)
-  }
-  
-  func displayInitialDatas(viewModel: HomeScenes.Load.ViewModel)
-  {
-    //nameTextField.text = viewModel.name
-    arrayBanners = viewModel.banners
-    print("Array:")
-    print(arrayBanners)
-    bannerCollectionView.reloadData()
-  }
+    private func setup()
+    {
+        let viewController = self
+        let interactor = HomeInteractor()
+        let presenter = HomePresenter()
+        let router = HomeRouter()
+        viewController.interactor = interactor
+        viewController.router = router
+        interactor.presenter = presenter
+        presenter.viewController = viewController
+        router.viewController = viewController
+        router.dataStore = interactor
+    }
+    
+    // MARK: Routing
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if let scene = segue.identifier {
+            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
+            if let router = router, router.responds(to: selector) {
+                router.perform(selector, with: segue)
+            }
+        }
+    }
+    
+    // MARK: View lifecycle
+    
+    override func viewWillAppear(_ animated: Bool) {
+        loadInitalData()
+    }
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        
+        // loadInitalData()
+        
+        pageView.numberOfPages = bannerArray.count
+        pageView.currentPage = 0
+        
+        
+        bannerCollectionView.dataSource = self
+        bannerCollectionView.delegate = self
+        
+        
+    }
+    
+    // MARK: Do something
+    
+    //@IBOutlet weak var nameTextField: UITextField!
+    
+    func loadInitalData()
+    {
+        let request = HomeScenes.Load.Request()
+        interactor?.doLoadInitialData(request: request)
+    }
+    
+    func displayInitialDatas(viewModel: HomeScenes.Load.ViewModel)
+    {
+        //nameTextField.text = viewModel.name
+        arrayBanners = viewModel.banners
+        print("Array:")
+        print(arrayBanners)
+        var countArray = arrayBanners[0].data.count
+        var banners = arrayBanners[0]
+        print(banners)
+        print(countArray)
+        
+        DispatchQueue.main.async {
+            self.bannerCollectionView.reloadData()
+        }
+        
+    }
+    
 }
-
 
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print(bannerArray.count)
-        return bannerArray.count
+        //     print(arrayBanners[0].data.count)
+        return 3
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        if let vc = cell.viewWithTag(111) as? UIImageView {
-            vc.image = bannerArray[indexPath.row]
+        print("Recarregou")
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "bannerCell", for: indexPath) as? BannerCell {
+            print(arrayBanners)
+            
+            if arrayBanners.isEmpty{
+                cell.bannerImage.kf.indicatorType = .activity
+                cell.bannerImage.kf.setImage(with: URL(string: "https://gph.is/1XRTmuh")!)   }
+            else {
+                let banner = arrayBanners[0]
+                let Image = banner.data[indexPath.row].urlImagem
+                print(Image)
+                let url = URL(string: Image)
+                if let image = URL(string: Image){
+                    cell.bannerImage.kf.indicatorType = .activity
+                    cell.bannerImage.kf.setImage(with: image)
+                }
+            }
+            return cell
         }
-        return cell
+        else {
+            return BannerCell()
+        }
+        
     }
     
     

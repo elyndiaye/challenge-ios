@@ -8,5 +8,6 @@ target 'Lodjinha' do
   use_frameworks!
   pod 'Alamofire', '~> 4.8.1'
   pod 'SwiftyJSON', '~> 4.2.0'
+  pod 'Kingfisher', '~> 4.2'
 
 end

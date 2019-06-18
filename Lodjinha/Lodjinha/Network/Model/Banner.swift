@@ -13,12 +13,13 @@ import Foundation
 
 // MARK: - Banner
 struct Banner: Codable {
-    let data: [Data]
+    let data: [DataBanner]
 }
 
 // MARK: - Datum
-struct Data: Codable {
+struct DataBanner: Codable {
     let id: Int
-    let urlImagem, linkUrl: String
+    let urlImagem: String
+    let linkUrl: String
     
 }

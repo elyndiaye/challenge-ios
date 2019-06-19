@@ -30,21 +30,21 @@
                                     <constraint firstAttribute="height" constant="150" id="94B-NO-liT"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="2FW-86-B4v">
-                                    <size key="itemSize" width="372" height="135"/>
+                                    <size key="itemSize" width="411" height="146"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="bannerCell" id="CmX-BN-5bc" customClass="BannerCell" customModule="Lodjinha" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="7.666666666666667" width="372" height="135"/>
+                                        <rect key="frame" x="0.0" y="2" width="411" height="146"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="372" height="135"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="411" height="146"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" tag="111" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5FN-g4-Rqb">
-                                                    <rect key="frame" x="0.0" y="0.0" width="372" height="135"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="411" height="146"/>
                                                 </imageView>
                                             </subviews>
                                         </view>
@@ -75,15 +75,15 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="QmT-Y1-sYI"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OZx-ct-7Se">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OZx-ct-7Se">
                                     <size key="itemSize" width="100" height="115"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="PON-FX-350" customClass="CategoryCell" customModule="Lodjinha" customModuleProvider="target">
-                                        <rect key="frame" x="16" y="0.0" width="100" height="115"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="categoryCell" id="PON-FX-350" customClass="CategoryCell" customModule="Lodjinha" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="2.6666666666666665" width="100" height="115"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="115"/>
@@ -95,8 +95,8 @@
                                                         <constraint firstAttribute="height" constant="92" id="N6w-aL-kkv"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descricao" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UUg-0s-6hR">
-                                                    <rect key="frame" x="23.666666666666668" y="96" width="52.666666666666657" height="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descricao" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="4" translatesAutoresizingMaskIntoConstraints="NO" id="UUg-0s-6hR">
+                                                    <rect key="frame" x="23.666666666666668" y="96.333333333333329" width="52.666666666666657" height="16.666666666666671"/>
                                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
                                                     <color key="textColor" white="0.83062065969999999" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -112,6 +112,7 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="categoryImageView" destination="Gmo-YN-9ao" id="qwc-9I-gne"/>
+                                            <outlet property="descricaoLbl" destination="UUg-0s-6hR" id="kxf-cG-srE"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -168,7 +169,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2371.0144927536235" y="-138.61607142857142"/>
+            <point key="canvasLocation" x="2371.0144927536235" y="-139.4021739130435"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="SdD-EG-ad7">

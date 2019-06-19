@@ -35,6 +35,7 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
                          UIImage(named:"Angelina Jolie") ,
                          UIImage(named:"Anne Hathaway") ]
     var arrayBanners = [Banner]()
+    var arrayCategories = [Categoria]()
     
     // MARK: Object lifecycle
     
@@ -98,6 +99,8 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
         bannerCollectionView.dataSource = self
         bannerCollectionView.delegate = self
         
+        categoryCollectionView.dataSource = self
+        categoryCollectionView.delegate = self
         
     }
     
@@ -120,52 +123,94 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
     {
         //nameTextField.text = viewModel.name
         arrayBanners = viewModel.banners
+        arrayCategories = viewModel.categories
         print("Array:")
         print(arrayBanners)
         var countArray = arrayBanners[0].data.count
         var banners = arrayBanners[0]
-        print(banners)
-        print(countArray)
+        
+        print("ArrayCategories:")
+        print(arrayCategories)
         
         DispatchQueue.main.async {
             self.bannerCollectionView.reloadData()
+        }
+        
+        DispatchQueue.main.async {
+            self.categoryCollectionView.reloadData()
         }
         
     }
     
 }
 
-
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         //     print(arrayBanners[0].data.count)
-        return 3
+        var count = 3
+        if collectionView == self.categoryCollectionView {
+            if arrayCategories.isEmpty{
+                count = 3
+            }else {
+                print(arrayCategories[0].data.count)
+                count = arrayCategories[0].data.count
+            }
+        }
+        return count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         print("Recarregou")
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "bannerCell", for: indexPath) as? BannerCell {
-            print(arrayBanners)
-            
-            if arrayBanners.isEmpty{
-                cell.bannerImage.kf.indicatorType = .activity
-                cell.bannerImage.kf.setImage(with: URL(string: "https://gph.is/1XRTmuh")!)   }
-            else {
-                let banner = arrayBanners[0]
-                let Image = banner.data[indexPath.row].urlImagem
-                print(Image)
-                let url = URL(string: Image)
-                if let image = URL(string: Image){
+        
+        if collectionView == self.bannerCollectionView {
+            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "bannerCell", for: indexPath) as? BannerCell {
+                print(arrayBanners)
+                
+                if arrayBanners.isEmpty{
                     cell.bannerImage.kf.indicatorType = .activity
-                    cell.bannerImage.kf.setImage(with: image)
+                    cell.bannerImage.kf.setImage(with: URL(string: "https://gph.is/1XRTmuh")!)   }
+                else {
+                    let banner = arrayBanners[0]
+                    let Image = banner.data[indexPath.row].urlImagem
+                    print(Image)
+                    if let image = URL(string: Image){
+                        cell.bannerImage.kf.indicatorType = .activity
+                        cell.bannerImage.kf.setImage(with: image)
+                    }
                 }
+                return cell
             }
-            return cell
-        }
-        else {
-            return BannerCell()
+            else {
+                return BannerCell()
+            }
         }
         
+        if collectionView == self.categoryCollectionView {
+            
+            if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "categoryCell", for: indexPath) as? CategoryCell {
+                print(arrayCategories)
+                
+                if arrayCategories.isEmpty{
+                    cell.categoryImageView.kf.indicatorType = .activity
+                    cell.categoryImageView.kf.setImage(with: URL(string: "https://gph.is/1XRTmuh")!)   }
+                else {
+                    let category = arrayCategories[0]
+                    cell.descricaoLbl.text =  category.data[indexPath.row].descricao
+                    let Image = category.data[indexPath.row].urlImagem
+                    if let image = URL(string: Image){
+                        cell.categoryImageView.kf.indicatorType = .activity
+                        cell.categoryImageView.kf.setImage(with: image)
+                    }
+                    
+                }
+                return cell
+            }
+            else {
+                return CategoryCell()
+            }
+        }
+        
+        return UICollectionViewCell()
     }
     
     
@@ -174,16 +219,24 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        if collectionView == self.bannerCollectionView {
+            return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0) }
+        else { return UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 0) }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let size = bannerCollectionView.frame.size
-        return CGSize(width: size.width, height: size.height)
+        if collectionView == self.bannerCollectionView {
+            let size = bannerCollectionView.frame.size
+            return CGSize(width: size.width, height: size.height) }
+        else {
+            return CGSize(width: 100, height: 115 ) }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 0.0
+        if collectionView == self.bannerCollectionView {
+            return 0.0 }
+        else {  return 10.10  }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {

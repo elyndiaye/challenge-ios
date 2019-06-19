@@ -34,12 +34,17 @@ class HomeInteractor: HomeBusinessLogic, HomeDataStore
     {
         worker = HomeWorker()
         worker?.fetchBanners(completionHandler: { (banners) in
-            //Prepara uma resposta que vai ser enviada para o PRESENTER
-            //Response serve para mandar os posts
-            let response = HomeScenes.Load.Response(banners: banners)
-            self.presenter?.presentInitalDatas(response: response)
+            self.worker?.fetchCategory(completionHandler: { (categories) in
+                //Prepara uma resposta que vai ser enviada para o PRESENTER
+                //Response serve para mandar os posts
+                let response = HomeScenes.Load.Response(banners: banners, categories: categories)
+                self.presenter?.presentInitalDatas(response: response)
+            })            
+            
         })
+        
     }
     
 }
+
 

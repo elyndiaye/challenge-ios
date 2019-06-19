@@ -24,10 +24,12 @@ enum HomeScenes
     struct Response
     {
         let banners: [Banner]
+        let categories: [Categoria]
     }
     struct ViewModel
     {
         let banners: [Banner]
+        let categories: [Categoria]
     }
   }
 }

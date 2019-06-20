@@ -1,8 +1,8 @@
 //
-//  Produto.swift
+//  Produtos.swift
 //  Lodjinha
 //
-//  Created by ely.assumpcao.ndiaye on 17/06/19.
+//  Created by ely.assumpcao.ndiaye on 20/06/19.
 //  Copyright © 2019 ely.assumpcao.ndiaye. All rights reserved.
 //
 
@@ -13,12 +13,11 @@ import Foundation
 // MARK: - Produtos
 struct Produtos: Codable {
     let data: [DataProdutos]
-    let offset, total: Int
 }
 
 // MARK: - Datum
 struct DataProdutos: Codable {
-    let categoria: CategoriaProduto
+    let categoria: CategoriaProdutos
     let descricao: String
     let id: Int
     let nome: String
@@ -27,7 +26,7 @@ struct DataProdutos: Codable {
 }
 
 // MARK: - Categoria
-struct CategoriaProduto: Codable {
+struct CategoriaProdutos: Codable {
     let descricao: String
     let id: Int
     let urlImagem: String

@@ -25,11 +25,13 @@ enum HomeScenes
     {
         let banners: [Banner]
         let categories: [Categoria]
+        let produtosMaisVendidos: [ProdutosMaisVendidos]
     }
     struct ViewModel
     {
         let banners: [Banner]
         let categories: [Categoria]
+        let produtosMaisVendidos: [ProdutosMaisVendidos]
     }
   }
 }

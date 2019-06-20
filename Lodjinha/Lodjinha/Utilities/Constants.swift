@@ -15,6 +15,8 @@ typealias CompletionHandler = (_ Success: Bool) -> ()
 let BASE_URL = "https://alodjinha.herokuapp.com"
 let URL_BANNER = "\(BASE_URL)/banner"
 let URL_CATEGORIA = "\(BASE_URL)/categoria"
+let URL_PRODUTO = "\(BASE_URL)/produto"
+let URL_PRODUTO_MAISVENDIDOS = "\(URL_PRODUTO)/maisvendidos"
 
 let URL_STATEMENTS = "\(BASE_URL)/statements/"
 //\(AuthService.instance.userId)

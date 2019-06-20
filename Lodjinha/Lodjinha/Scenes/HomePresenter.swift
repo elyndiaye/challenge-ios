@@ -25,7 +25,7 @@ class HomePresenter: HomePresentationLogic
   
   func presentInitalDatas(response: HomeScenes.Load.Response)
   {
-    let viewModel = HomeScenes.Load.ViewModel(banners: response.banners, categories: response.categories)
+    let viewModel = HomeScenes.Load.ViewModel(banners: response.banners, categories: response.categories, produtosMaisVendidos: response.produtosMaisVendidos)
     viewController?.displayInitialDatas(viewModel: viewModel)
   }
 }

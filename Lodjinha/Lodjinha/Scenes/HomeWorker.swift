@@ -28,4 +28,11 @@ class HomeWorker
         }
     }
     
+    func fetchProductsMoreSales(completionHandler: @escaping ([ProdutosMaisVendidos]) -> Void){
+        print("Chamou MaisVendidos")
+        NetworkManager.shared.getMoreSales{ produtosMaisVendidos in
+            completionHandler(produtosMaisVendidos)
+        }
+    }
+    
 }

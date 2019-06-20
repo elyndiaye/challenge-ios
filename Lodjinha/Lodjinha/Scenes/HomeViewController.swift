@@ -24,6 +24,7 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
     
     @IBOutlet weak var bannerCollectionView: UICollectionView!
     @IBOutlet weak var categoryCollectionView: UICollectionView!
+    @IBOutlet weak var maisVendidosTableView: UITableView!
     
     
     @IBOutlet weak var pageView: UIPageControl!
@@ -36,6 +37,7 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
                          UIImage(named:"Anne Hathaway") ]
     var arrayBanners = [Banner]()
     var arrayCategories = [Categoria]()
+    var arrayProdutosMaisVendidos = [ProdutosMaisVendidos]()
     
     // MARK: Object lifecycle
     
@@ -102,6 +104,9 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
         categoryCollectionView.dataSource = self
         categoryCollectionView.delegate = self
         
+        maisVendidosTableView.delegate = self
+        maisVendidosTableView.dataSource = self
+        
     }
     
     func addNavBarImage() {
@@ -124,14 +129,8 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
         //nameTextField.text = viewModel.name
         arrayBanners = viewModel.banners
         arrayCategories = viewModel.categories
-        print("Array:")
-        print(arrayBanners)
-        var countArray = arrayBanners[0].data.count
-        var banners = arrayBanners[0]
-        
-        print("ArrayCategories:")
-        print(arrayCategories)
-        
+        arrayProdutosMaisVendidos = viewModel.produtosMaisVendidos
+    
         DispatchQueue.main.async {
             self.bannerCollectionView.reloadData()
         }
@@ -140,19 +139,21 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
             self.categoryCollectionView.reloadData()
         }
         
+        DispatchQueue.main.async {
+            self.maisVendidosTableView.reloadData()
+        }
+        
     }
     
 }
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //     print(arrayBanners[0].data.count)
         var count = 3
         if collectionView == self.categoryCollectionView {
             if arrayCategories.isEmpty{
                 count = 3
             }else {
-                print(arrayCategories[0].data.count)
                 count = arrayCategories[0].data.count
             }
         }
@@ -160,11 +161,9 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        print("Recarregou")
         
         if collectionView == self.bannerCollectionView {
             if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "bannerCell", for: indexPath) as? BannerCell {
-                print(arrayBanners)
                 
                 if arrayBanners.isEmpty{
                     cell.bannerImage.kf.indicatorType = .activity
@@ -172,7 +171,6 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
                 else {
                     let banner = arrayBanners[0]
                     let Image = banner.data[indexPath.row].urlImagem
-                    print(Image)
                     if let image = URL(string: Image){
                         cell.bannerImage.kf.indicatorType = .activity
                         cell.bannerImage.kf.setImage(with: image)
@@ -188,7 +186,6 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         if collectionView == self.categoryCollectionView {
             
             if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "categoryCell", for: indexPath) as? CategoryCell {
-                print(arrayCategories)
                 
                 if arrayCategories.isEmpty{
                     cell.categoryImageView.kf.indicatorType = .activity
@@ -251,4 +248,63 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
         }
     }
     
+}
+
+extension HomeViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        var count = 2
+        if arrayCategories.isEmpty{
+            count = 2
+        }else {
+            count = arrayProdutosMaisVendidos[0].data.count
+        }
+        return count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier:"productCell", for: indexPath) as? ProductCell {
+            
+            if arrayProdutosMaisVendidos.isEmpty{
+                cell.productImageView.kf.indicatorType = .activity
+                cell.productImageView.kf.setImage(with: URL(string: "https://gph.is/1XRTmuh")!)   }
+            else {
+                
+                let maisVendidos = arrayProdutosMaisVendidos[0]
+                cell.productLbl.text = maisVendidos.data[indexPath.row].nome
+                cell.precoDe.attributedText = "De:\(maisVendidos.data[indexPath.row].precoDe)".strikeThrough()
+                let roundPreco = String(format:"%.2f",maisVendidos.data[indexPath.row].precoPor)
+                cell.precoPor.text = "Por \(roundPreco)"
+                let Image = maisVendidos.data[indexPath.row].urlImagem
+                if let image = URL(string: Image){
+                    cell.productImageView.kf.indicatorType = .activity
+                    cell.productImageView.kf.setImage(with: image)
+                }
+            }
+            
+            return cell
+            
+        } else {
+            return UITableViewCell()
+        }
+    }
+}
+
+extension HomeViewController: UITableViewDelegate {
+    //Implementando o Clique do botao
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //        let post = arrayPosts[indexPath.row]
+        //        //Requisicao
+        //        let request = PostScene.Comments.Request(post:post)
+        //        //Chamando o interactor falando que queremos carregar os dados mandando a linha do post na requisicao
+        //        interactor?.doLoadComments(request: request)
+        //
+    }
+}
+
+extension String {
+    func strikeThrough() -> NSAttributedString {
+        let attributeString =  NSMutableAttributedString(string: self)
+        attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: NSUnderlineStyle.single.rawValue, range: NSMakeRange(0,attributeString.length))
+        return attributeString
+    }
 }

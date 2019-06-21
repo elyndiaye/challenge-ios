@@ -51,12 +51,7 @@ class NetworkManager {
                     let decoder = JSONDecoder()
                     let decodedCategories = try decoder.decode(Categoria.self, from: data)
                     
-                    //print(decodedCategories)
-                    //print(decodedStatements.statementList[0].title,.data[0].urlImagem)
-                    
-                    
                     completionHandler([decodedCategories])
-                    //   print(completionHandler(decodedUserAcconts))
                 } catch let error {
                     print(error)
                     completionHandler(arrayCategories)
@@ -81,8 +76,6 @@ class NetworkManager {
                     let decodedProdutosMaisVendidos = try decoder.decode(ProdutosMaisVendidos.self, from: data)
                     
                     completionHandler([decodedProdutosMaisVendidos])
-                    //completion(true)
-                    //   print(completionHandler(decodedUserAcconts))
                 } catch let error {
                     print(error)
                     completionHandler(arrayProdutosMaisVendidos)
@@ -108,7 +101,6 @@ class NetworkManager {
                 do {
                     let decoder = JSONDecoder()
                     let decodedProdutoByCategoryId = try decoder.decode(Produtos.self, from: data)
-                    print(decodedProdutoByCategoryId)
                     completionHandler([decodedProdutoByCategoryId])
                 } catch let error {
                     print(error)

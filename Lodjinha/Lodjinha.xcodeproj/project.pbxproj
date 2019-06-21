@@ -26,7 +26,6 @@
 		809F65E822BC8EE700A17402 /* ProdutoById.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809F65E722BC8EE700A17402 /* ProdutoById.swift */; };
 		809F65EB22BCA1D000A17402 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809F65EA22BCA1D000A17402 /* RoundButton.swift */; };
 		80B52AD622B61428009E8A4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B52AD522B61428009E8A4E /* AppDelegate.swift */; };
-		80B52AD822B61428009E8A4E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B52AD722B61428009E8A4E /* ViewController.swift */; };
 		80B52ADB22B61428009E8A4E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80B52AD922B61428009E8A4E /* Main.storyboard */; };
 		80B52ADE22B61428009E8A4E /* Lodjinha.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 80B52ADC22B61428009E8A4E /* Lodjinha.xcdatamodeld */; };
 		80B52AE322B61429009E8A4E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80B52AE122B61429009E8A4E /* LaunchScreen.storyboard */; };
@@ -52,6 +51,8 @@
 		80F5C33322BD231100CBA0BB /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F5C32D22BD231100CBA0BB /* ProductsViewController.swift */; };
 		80F5C33422BD231100CBA0BB /* ProductsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F5C32E22BD231100CBA0BB /* ProductsInteractor.swift */; };
 		80F5C33822BD282200CBA0BB /* ProductListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F5C33722BD282200CBA0BB /* ProductListCell.swift */; };
+		80F5C33A22BD7CC300CBA0BB /* Xib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 80F5C33922BD7CC300CBA0BB /* Xib.xib */; };
+		80F5C33C22BD7DE100CBA0BB /* XibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F5C33B22BD7DE100CBA0BB /* XibView.swift */; };
 		80FA841922BAE7CA0089619F /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FA841822BAE7CA0089619F /* ProductCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -93,7 +94,6 @@
 		809F65EA22BCA1D000A17402 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		80B52AD222B61428009E8A4E /* Lodjinha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lodjinha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80B52AD522B61428009E8A4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		80B52AD722B61428009E8A4E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		80B52ADA22B61428009E8A4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		80B52ADD22B61428009E8A4E /* Lodjinha.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Lodjinha.xcdatamodel; sourceTree = "<group>"; };
 		80B52AE222B61429009E8A4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -124,6 +124,8 @@
 		80F5C32D22BD231100CBA0BB /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
 		80F5C32E22BD231100CBA0BB /* ProductsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsInteractor.swift; sourceTree = "<group>"; };
 		80F5C33722BD282200CBA0BB /* ProductListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListCell.swift; sourceTree = "<group>"; };
+		80F5C33922BD7CC300CBA0BB /* Xib.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Xib.xib; sourceTree = "<group>"; };
+		80F5C33B22BD7DE100CBA0BB /* XibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibView.swift; sourceTree = "<group>"; };
 		80FA841822BAE7CA0089619F /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		B3D958001A862F219CE06F1D /* Pods-Lodjinha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lodjinha.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Lodjinha/Pods-Lodjinha.debug.xcconfig"; sourceTree = "<group>"; };
 		B71AD5BF0433AF843C38E6EA /* Pods-Lodjinha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lodjinha.release.xcconfig"; path = "Pods/Target Support Files/Pods-Lodjinha/Pods-Lodjinha.release.xcconfig"; sourceTree = "<group>"; };
@@ -262,12 +264,13 @@
 				80B52B0622B6168F009E8A4E /* Scenes */,
 				80B52AD522B61428009E8A4E /* AppDelegate.swift */,
 				8023FDD122B936AF00C8E595 /* Assets.xcassets */,
-				80B52AD722B61428009E8A4E /* ViewController.swift */,
 				80B52AD922B61428009E8A4E /* Main.storyboard */,
 				802D990E22B7B69D006F1A57 /* Pacifico-Regular.ttf */,
 				80B52AE122B61429009E8A4E /* LaunchScreen.storyboard */,
 				80B52AE422B61429009E8A4E /* Info.plist */,
 				80B52ADC22B61428009E8A4E /* Lodjinha.xcdatamodeld */,
+				80F5C33922BD7CC300CBA0BB /* Xib.xib */,
+				80F5C33B22BD7DE100CBA0BB /* XibView.swift */,
 			);
 			path = Lodjinha;
 			sourceTree = "<group>";
@@ -477,6 +480,7 @@
 				802D990F22B7B69D006F1A57 /* Pacifico-Regular.ttf in Resources */,
 				8023FDD222B936AF00C8E595 /* Assets.xcassets in Resources */,
 				80B52ADB22B61428009E8A4E /* Main.storyboard in Resources */,
+				80F5C33A22BD7CC300CBA0BB /* Xib.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -559,7 +563,6 @@
 				809F65E122BC891A00A17402 /* AboutPresenter.swift in Sources */,
 				80BB86FA22BC58BE0023AB85 /* DetailProductModels.swift in Sources */,
 				80B52B0F22B616A6009E8A4E /* HomeRouter.swift in Sources */,
-				80B52AD822B61428009E8A4E /* ViewController.swift in Sources */,
 				80B52B1122B616A6009E8A4E /* HomeViewController.swift in Sources */,
 				809F65E822BC8EE700A17402 /* ProdutoById.swift in Sources */,
 				80BB86FC22BC58BE0023AB85 /* DetailProductInteractor.swift in Sources */,
@@ -582,6 +585,7 @@
 				809F65E222BC891A00A17402 /* AboutWorker.swift in Sources */,
 				809F65E522BC891A00A17402 /* AboutViewController.swift in Sources */,
 				802D991422B7D991006F1A57 /* NetworkManeger.swift in Sources */,
+				80F5C33C22BD7DE100CBA0BB /* XibView.swift in Sources */,
 				80B52B1022B616A6009E8A4E /* HomeModels.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

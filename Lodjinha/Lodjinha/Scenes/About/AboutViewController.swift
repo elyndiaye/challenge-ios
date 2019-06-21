@@ -22,6 +22,9 @@ class AboutViewController: UIViewController, AboutDisplayLogic
     var interactor: AboutBusinessLogic?
     var router: (NSObjectProtocol & AboutRoutingLogic & AboutDataPassing)?
     
+    
+    @IBOutlet var TopView: UIView!
+    
     // MARK: Object lifecycle
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -73,6 +76,7 @@ class AboutViewController: UIViewController, AboutDisplayLogic
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        //self.view.addSubview(TopView)
         print("Sobre")
         doSomething()
     }

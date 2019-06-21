@@ -18,22 +18,29 @@ enum HomeScenes
     
     enum Load {
         struct Request {}
-        struct Response
-        {
+        struct Response {
             let banners: [Banner]
             let categories: [Categoria]
             let produtosMaisVendidos: [ProdutosMaisVendidos]
         }
-        struct ViewModel
-        {
+        struct ViewModel {
             let banners: [Banner]
             let categories: [Categoria]
             let produtosMaisVendidos: [ProdutosMaisVendidos]
         }
     }
+    
     enum DetailProduct {
         struct Request {
             let product : [DataProdutosMaisVendidos]
+        }
+        struct Response {}
+        struct ViewModel {}
+    }
+    
+    enum ProductsList {
+        struct Request {
+           let categoria : [DataCategoria]
         }
         struct Response {}
         struct ViewModel {}

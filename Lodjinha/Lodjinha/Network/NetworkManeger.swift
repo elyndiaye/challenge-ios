@@ -28,7 +28,6 @@ class NetworkManager {
                     let decodedBanners = try decoder.decode(Banner.self, from: data)
                     
                     completionHandler([decodedBanners])
-                    //   print(completionHandler(decodedUserAcconts))
                 } catch let error {
                     print(error)
                     completionHandler(arrayBanners)
@@ -96,6 +95,31 @@ class NetworkManager {
             
         }
     }
+    
+    func getProductByCategoryId(withCategoryId categoryId: String, completionHandler: @escaping ([Produtos]) -> Void ) {
+        print("\(URL_PRODUTO)?limit=20&categoriaId=\(categoryId)")
+        Alamofire.request("\(URL_PRODUTO)?limit=20&categoriaId=\(categoryId)", method: .get, parameters: nil, encoding: JSONEncoding.default).responseJSON { (response:DataResponse<Any>) in
+            print("ProductByCategoryId")
+            let arrayProdutoByCategoryId = [Produtos]()
+            
+            if response.result.error == nil {
+                guard let data = response.data else { return }
+                
+                do {
+                    let decoder = JSONDecoder()
+                    let decodedProdutoByCategoryId = try decoder.decode(Produtos.self, from: data)
+                    print(decodedProdutoByCategoryId)
+                    completionHandler([decodedProdutoByCategoryId])
+                } catch let error {
+                    print(error)
+                    completionHandler(arrayProdutoByCategoryId)
+                    debugPrint(response.result.error as Any) }
+            } else {
+                debugPrint(response.result.error as Any)
+            }
+        }
+    }
+    
     
     func getProductById(withProductId productId: String, completionHandler: @escaping ([ProdutosById]) -> Void ) {
         Alamofire.request("\(URL_PRODUTO)/\(productId)", method: .get, parameters: nil, encoding: JSONEncoding.default).responseJSON { (response:DataResponse<Any>) in

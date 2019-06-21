@@ -16,11 +16,13 @@ protocol HomeBusinessLogic
 {
     func doLoadInitialData(request: HomeScenes.Load.Request)
     func doLoadDetailProducts(request: HomeScenes.DetailProduct.Request)
+    func doLoadProductsList(request: HomeScenes.ProductsList.Request)
 }
 
 protocol HomeDataStore
 {
     var productId: Int { get set }
+    var categoriaId: Int { get set }
 }
 
 class HomeInteractor: HomeBusinessLogic, HomeDataStore
@@ -28,6 +30,7 @@ class HomeInteractor: HomeBusinessLogic, HomeDataStore
     var presenter: HomePresentationLogic?
     var worker: HomeWorker?
     var productId: Int = 0
+    var categoriaId: Int = 0
     
     // MARK: Do something
     
@@ -54,6 +57,14 @@ class HomeInteractor: HomeBusinessLogic, HomeDataStore
         print("ProductId:\(productId)")
         let response = HomeScenes.DetailProduct.Response()
         presenter?.presentDetailProduct(response: response)
+    }
+    
+    func doLoadProductsList(request: HomeScenes.ProductsList.Request) {
+        let categoria = request.categoria
+        categoriaId = categoria[0].id
+        print("categoriaId:\(categoriaId)")
+        let response = HomeScenes.ProductsList.Response()
+        presenter?.presentProductsList(response: response)
     }
     
 }

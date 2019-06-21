@@ -18,6 +18,7 @@ protocol HomeDisplayLogic: class {
     
     func displayInitialDatas(viewModel: HomeScenes.Load.ViewModel)
     func displayDetailProduct(viewModel: HomeScenes.DetailProduct.ViewModel)
+    func displayProductsList(viewModel: HomeScenes.ProductsList.ViewModel)
 }
 
 class HomeViewController: UIViewController, HomeDisplayLogic {
@@ -155,6 +156,9 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
         router?.routeToDetailProduct()
     }
     
+    func displayProductsList(viewModel: HomeScenes.ProductsList.ViewModel) {
+        router?.routeToProductsList()
+    }
 }
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -218,6 +222,19 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         }
         
         return UICollectionViewCell()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == self.categoryCollectionView {
+            if arrayCategories.isEmpty{}else{
+                let categoria = arrayCategories[0].data[indexPath.row]
+                print("categoria da cell\(categoria)")
+                let request = HomeScenes.ProductsList.Request(categoria: [categoria])
+                print("request\(request)")
+                interactor?.doLoadProductsList(request: request)
+            }
+        }
+        
     }
     
     

@@ -45,6 +45,13 @@
 		80BB86FA22BC58BE0023AB85 /* DetailProductModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BB86F422BC58BE0023AB85 /* DetailProductModels.swift */; };
 		80BB86FB22BC58BE0023AB85 /* DetailProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BB86F522BC58BE0023AB85 /* DetailProductViewController.swift */; };
 		80BB86FC22BC58BE0023AB85 /* DetailProductInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80BB86F622BC58BE0023AB85 /* DetailProductInteractor.swift */; };
+		80F5C32F22BD231100CBA0BB /* ProductsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F5C32922BD231100CBA0BB /* ProductsPresenter.swift */; };
+		80F5C33022BD231100CBA0BB /* ProductsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F5C32A22BD231100CBA0BB /* ProductsWorker.swift */; };
+		80F5C33122BD231100CBA0BB /* ProductsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F5C32B22BD231100CBA0BB /* ProductsRouter.swift */; };
+		80F5C33222BD231100CBA0BB /* ProductsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F5C32C22BD231100CBA0BB /* ProductsModels.swift */; };
+		80F5C33322BD231100CBA0BB /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F5C32D22BD231100CBA0BB /* ProductsViewController.swift */; };
+		80F5C33422BD231100CBA0BB /* ProductsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F5C32E22BD231100CBA0BB /* ProductsInteractor.swift */; };
+		80F5C33822BD282200CBA0BB /* ProductListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F5C33722BD282200CBA0BB /* ProductListCell.swift */; };
 		80FA841922BAE7CA0089619F /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FA841822BAE7CA0089619F /* ProductCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -110,6 +117,13 @@
 		80BB86F422BC58BE0023AB85 /* DetailProductModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailProductModels.swift; sourceTree = "<group>"; };
 		80BB86F522BC58BE0023AB85 /* DetailProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailProductViewController.swift; sourceTree = "<group>"; };
 		80BB86F622BC58BE0023AB85 /* DetailProductInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailProductInteractor.swift; sourceTree = "<group>"; };
+		80F5C32922BD231100CBA0BB /* ProductsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsPresenter.swift; sourceTree = "<group>"; };
+		80F5C32A22BD231100CBA0BB /* ProductsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsWorker.swift; sourceTree = "<group>"; };
+		80F5C32B22BD231100CBA0BB /* ProductsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsRouter.swift; sourceTree = "<group>"; };
+		80F5C32C22BD231100CBA0BB /* ProductsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsModels.swift; sourceTree = "<group>"; };
+		80F5C32D22BD231100CBA0BB /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
+		80F5C32E22BD231100CBA0BB /* ProductsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsInteractor.swift; sourceTree = "<group>"; };
+		80F5C33722BD282200CBA0BB /* ProductListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListCell.swift; sourceTree = "<group>"; };
 		80FA841822BAE7CA0089619F /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
 		B3D958001A862F219CE06F1D /* Pods-Lodjinha.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lodjinha.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Lodjinha/Pods-Lodjinha.debug.xcconfig"; sourceTree = "<group>"; };
 		B71AD5BF0433AF843C38E6EA /* Pods-Lodjinha.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lodjinha.release.xcconfig"; path = "Pods/Target Support Files/Pods-Lodjinha/Pods-Lodjinha.release.xcconfig"; sourceTree = "<group>"; };
@@ -279,6 +293,7 @@
 		80B52B0622B6168F009E8A4E /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				80F5C32822BD229000CBA0BB /* ProductsScene */,
 				809F65E922BCA18C00A17402 /* View */,
 				809F65DA22BC88FA00A17402 /* About */,
 				80BB86F022BC571E0023AB85 /* DetailProductScene */,
@@ -320,6 +335,36 @@
 				76C045CABBD6A0EF1A913384 /* Pods_Lodjinha.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		80F5C32822BD229000CBA0BB /* ProductsScene */ = {
+			isa = PBXGroup;
+			children = (
+				80F5C33522BD279300CBA0BB /* View */,
+				80F5C32922BD231100CBA0BB /* ProductsPresenter.swift */,
+				80F5C32A22BD231100CBA0BB /* ProductsWorker.swift */,
+				80F5C32B22BD231100CBA0BB /* ProductsRouter.swift */,
+				80F5C32C22BD231100CBA0BB /* ProductsModels.swift */,
+				80F5C32D22BD231100CBA0BB /* ProductsViewController.swift */,
+				80F5C32E22BD231100CBA0BB /* ProductsInteractor.swift */,
+			);
+			path = ProductsScene;
+			sourceTree = "<group>";
+		};
+		80F5C33522BD279300CBA0BB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				80F5C33622BD279D00CBA0BB /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		80F5C33622BD279D00CBA0BB /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				80F5C33722BD282200CBA0BB /* ProductListCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -499,12 +544,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80F5C32F22BD231100CBA0BB /* ProductsPresenter.swift in Sources */,
 				809F65E622BC891A00A17402 /* AboutInteractor.swift in Sources */,
 				80BB86FB22BC58BE0023AB85 /* DetailProductViewController.swift in Sources */,
+				80F5C33322BD231100CBA0BB /* ProductsViewController.swift in Sources */,
+				80F5C33222BD231100CBA0BB /* ProductsModels.swift in Sources */,
 				809F65E322BC891A00A17402 /* AboutRouter.swift in Sources */,
 				80B52ADE22B61428009E8A4E /* Lodjinha.xcdatamodeld in Sources */,
+				80F5C33022BD231100CBA0BB /* ProductsWorker.swift in Sources */,
+				80F5C33822BD282200CBA0BB /* ProductListCell.swift in Sources */,
 				809F65E422BC891A00A17402 /* AboutModels.swift in Sources */,
 				8004684422BBC97500F7E4EA /* Produtos.swift in Sources */,
+				80F5C33422BD231100CBA0BB /* ProductsInteractor.swift in Sources */,
 				809F65E122BC891A00A17402 /* AboutPresenter.swift in Sources */,
 				80BB86FA22BC58BE0023AB85 /* DetailProductModels.swift in Sources */,
 				80B52B0F22B616A6009E8A4E /* HomeRouter.swift in Sources */,
@@ -522,6 +573,7 @@
 				80BB86F822BC58BE0023AB85 /* DetailProductWorker.swift in Sources */,
 				802D991C22B7DB37006F1A57 /* ProdutosMaisVendidos.swift in Sources */,
 				80B52B0D22B616A6009E8A4E /* HomePresenter.swift in Sources */,
+				80F5C33122BD231100CBA0BB /* ProductsRouter.swift in Sources */,
 				80BB86F722BC58BE0023AB85 /* DetailProductPresenter.swift in Sources */,
 				80B5BC9C22B95627005444FB /* CategoryCell.swift in Sources */,
 				80FA841922BAE7CA0089619F /* ProductCell.swift in Sources */,

@@ -14,7 +14,8 @@ import UIKit
 
 @objc protocol HomeRoutingLogic
 {
-    func routeToDetailProduct() 
+    func routeToDetailProduct()
+    func routeToProductsList()
 }
 
 protocol HomeDataPassing
@@ -35,6 +36,14 @@ class HomeRouter: NSObject, HomeRoutingLogic, HomeDataPassing
         var destinationDS = destinationVC.router!.dataStore!
         passDataToDetailProduct(source: dataStore!, destination: &destinationDS)
         navigateToDetailProduct(source: viewController!, destination: destinationVC)
+    }
+    
+    func routeToProductsList() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let destinationVC = storyboard.instantiateViewController(withIdentifier: "ProductsViewController") as! ProductsViewController
+        var destinationDS = destinationVC.router!.dataStore!
+        passDataToProductsList(source: dataStore!, destination: &destinationDS)
+        navigateToProductsList(source: viewController!, destination: destinationVC)
     }
     //func routeToSomewhere(segue: UIStoryboardSegue?)
     //{
@@ -57,9 +66,17 @@ class HomeRouter: NSObject, HomeRoutingLogic, HomeDataPassing
       source.show(destination, sender: nil)
     }
     
+    func navigateToProductsList(source: HomeViewController, destination: ProductsViewController){
+        source.show(destination, sender: nil)
+    }
+    
     // MARK: Passing data
     
     func passDataToDetailProduct(source: HomeDataStore, destination: inout DetailProductDataStore){
       destination.productId = source.productId
+    }
+    
+    func passDataToProductsList(source: HomeDataStore, destination: inout ProductsDataStore){
+        destination.categoriaId = source.categoriaId
     }
 }

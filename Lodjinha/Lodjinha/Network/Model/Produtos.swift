@@ -13,6 +13,7 @@ import Foundation
 // MARK: - Produtos
 struct Produtos: Codable {
     let data: [DataProdutos]
+    let offset, total: Int
 }
 
 // MARK: - Datum

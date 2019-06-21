@@ -15,6 +15,7 @@ import UIKit
 protocol HomePresentationLogic {
     func presentInitalDatas(response: HomeScenes.Load.Response)
     func presentDetailProduct(response: HomeScenes.DetailProduct.Response)
+    func presentProductsList(response: HomeScenes.ProductsList.Response)
     
 }
 
@@ -33,5 +34,10 @@ class HomePresenter: HomePresentationLogic
     func presentDetailProduct(response: HomeScenes.DetailProduct.Response) {
         let viewModel = HomeScenes.DetailProduct.ViewModel()
         viewController?.displayDetailProduct(viewModel: viewModel)
+    }
+    
+    func presentProductsList(response: HomeScenes.ProductsList.Response) {
+        let viewModel = HomeScenes.ProductsList.ViewModel()
+        viewController?.displayProductsList(viewModel: viewModel)
     }
 }

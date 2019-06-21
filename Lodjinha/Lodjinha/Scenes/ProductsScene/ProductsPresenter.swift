@@ -14,18 +14,23 @@ import UIKit
 
 protocol ProductsPresentationLogic
 {
-  func presentInitialData(response: Products.Load.Response)
+    func presentInitialData(response: Products.Load.Response)
+    func presentDetailProduct(response: Products.DetailProduct.Response)
 }
 
 class ProductsPresenter: ProductsPresentationLogic
 {
-  weak var viewController: ProductsDisplayLogic?
-  
-  // MARK: Do something
-  
-  func presentInitialData(response: Products.Load.Response)
-  {
-    let viewModel = Products.Load.ViewModel(produtos: response.produtos)
-    viewController?.displayInitialData(viewModel: viewModel)
-  }
+    weak var viewController: ProductsDisplayLogic?
+    
+    // MARK: Do something
+    
+    func presentInitialData(response: Products.Load.Response) {
+        let viewModel = Products.Load.ViewModel(produtos: response.produtos)
+        viewController?.displayInitialData(viewModel: viewModel)
+    }
+    
+    func presentDetailProduct(response: Products.DetailProduct.Response) {
+        let viewModel = Products.DetailProduct.ViewModel()
+        viewController?.displayDetailProduct(viewModel: viewModel)
+    }
 }

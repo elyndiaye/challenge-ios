@@ -224,7 +224,7 @@
         <!--Products View Controller-->
         <scene sceneID="Yfi-Bs-UY3">
             <objects>
-                <viewController storyboardIdentifier="ProductsViewController" id="KR0-2T-ZZH" customClass="ProductsViewController" customModule="Lodjinha" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProductsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="KR0-2T-ZZH" customClass="ProductsViewController" customModule="Lodjinha" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zW2-83-tRJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

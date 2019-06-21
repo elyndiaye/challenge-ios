@@ -15,10 +15,13 @@ import UIKit
 protocol ProductsDisplayLogic: class
 {
     func displayInitialData(viewModel: Products.Load.ViewModel)
+    func displayDetailProduct(viewModel: Products.DetailProduct.ViewModel)
 }
 
 class ProductsViewController: UIViewController, ProductsDisplayLogic
 {
+    
+    
     var interactor: ProductsBusinessLogic?
     var router: (NSObjectProtocol & ProductsRoutingLogic & ProductsDataPassing)?
     var arrayProductsList = [Produtos]()
@@ -96,13 +99,16 @@ class ProductsViewController: UIViewController, ProductsDisplayLogic
         interactor?.doLoadInitialData(request: request)
     }
     
-    func displayInitialData(viewModel: Products.Load.ViewModel)
-    {
+    func displayInitialData(viewModel: Products.Load.ViewModel) {
         arrayProductsList = viewModel.produtos
         
         DispatchQueue.main.async {
             self.productsTableView.reloadData()
         }
+    }
+    
+    func displayDetailProduct(viewModel: Products.DetailProduct.ViewModel) {
+        router?.routeToDetailProduct()
     }
 }
 
@@ -147,10 +153,10 @@ extension ProductsViewController: UITableViewDataSource {
 
 extension ProductsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //        if arrayProductsList.isEmpty{}else{
-        //            let product = arrayProdutosMaisVendidos[0].data[indexPath.row]
-        //            let request = HomeScenes.DetailProduct.Request(product: [product])
-        //            interactor?.doLoadDetailProducts(request: request)
-        //        }
+                if arrayProductsList.isEmpty{}else{
+                    let product = arrayProductsList[0].data[indexPath.row]
+                    let request = Products.DetailProduct.Request(product: [product])
+                    interactor?.doLoadDetailProducts(request: request)
+                }
     }
 }

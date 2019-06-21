@@ -14,47 +14,42 @@ import UIKit
 
 @objc protocol ProductsRoutingLogic
 {
-  //func routeToSomewhere(segue: UIStoryboardSegue?)
+    func routeToDetailProduct()
+    //func routeToSomewhere(segue: UIStoryboardSegue?)
+    
 }
 
 protocol ProductsDataPassing
 {
-  var dataStore: ProductsDataStore? { get }
+    var dataStore: ProductsDataStore? { get }
 }
 
 class ProductsRouter: NSObject, ProductsRoutingLogic, ProductsDataPassing
 {
-  weak var viewController: ProductsViewController?
-  var dataStore: ProductsDataStore?
-  
-  // MARK: Routing
-  
-  //func routeToSomewhere(segue: UIStoryboardSegue?)
-  //{
-  //  if let segue = segue {
-  //    let destinationVC = segue.destination as! SomewhereViewController
-  //    var destinationDS = destinationVC.router!.dataStore!
-  //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-  //  } else {
-  //    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-  //    let destinationVC = storyboard.instantiateViewController(withIdentifier: "SomewhereViewController") as! SomewhereViewController
-  //    var destinationDS = destinationVC.router!.dataStore!
-  //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-  //    navigateToSomewhere(source: viewController!, destination: destinationVC)
-  //  }
-  //}
-
-  // MARK: Navigation
-  
-  //func navigateToSomewhere(source: ProductsViewController, destination: SomewhereViewController)
-  //{
-  //  source.show(destination, sender: nil)
-  //}
-  
-  // MARK: Passing data
-  
-  //func passDataToSomewhere(source: ProductsDataStore, destination: inout SomewhereDataStore)
-  //{
-  //  destination.name = source.name
-  //}
+    weak var viewController: ProductsViewController?
+    var dataStore: ProductsDataStore?
+    
+    // MARK: Routing
+    
+    func routeToDetailProduct() {
+        //Main
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let destinationVC = storyboard.instantiateViewController(withIdentifier: "DetailProductViewController") as! DetailProductViewController
+        var destinationDS = destinationVC.router!.dataStore!
+        passDataToDetailProduct(source: dataStore!, destination: &destinationDS)
+        navigateToDetailProduct(source: viewController!, destination: destinationVC)
+    }
+    
+    
+    // MARK: Navigation
+    
+    func navigateToDetailProduct(source: ProductsViewController, destination: DetailProductViewController){
+        source.show(destination, sender: nil)
+    }
+    
+    // MARK: Passing data
+    
+    func passDataToDetailProduct(source: ProductsDataStore, destination: inout DetailProductDataStore){
+        destination.productId = source.productId
+    }
 }

@@ -14,20 +14,27 @@ import UIKit
 
 enum Products
 {
-  // MARK: Use cases
-  
-  enum Load
-  {
-    struct Request
-    {
+    // MARK: Use cases
+    
+    enum Load{
+        struct Request
+        {
+        }
+        struct Response
+        {
+            let produtos: [Produtos]
+        }
+        struct ViewModel
+        {
+            let produtos: [Produtos]
+        }
     }
-    struct Response
-    {
-        let produtos: [Produtos]
+    
+    enum DetailProduct {
+        struct Request {
+            let product : [DataProdutos]
+        }
+        struct Response {}
+        struct ViewModel {}
     }
-    struct ViewModel
-    {
-        let produtos: [Produtos]
-    }
-  }
 }

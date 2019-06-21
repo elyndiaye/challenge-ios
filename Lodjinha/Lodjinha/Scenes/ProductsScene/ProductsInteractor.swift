@@ -15,11 +15,13 @@ import UIKit
 protocol ProductsBusinessLogic
 {
     func doLoadInitialData(request: Products.Load.Request)
+    func doLoadDetailProducts(request: Products.DetailProduct.Request)
 }
 
 protocol ProductsDataStore
 {
     var categoriaId: Int { get set }
+    var productId: Int { get set }
 }
 
 class ProductsInteractor: ProductsBusinessLogic, ProductsDataStore
@@ -27,11 +29,11 @@ class ProductsInteractor: ProductsBusinessLogic, ProductsDataStore
     var presenter: ProductsPresentationLogic?
     var worker: ProductsWorker?
     var categoriaId: Int = 0
+    var productId: Int = 0
     
     // MARK: Do something
     
-    func doLoadInitialData(request: Products.Load.Request)
-    {
+    func doLoadInitialData(request: Products.Load.Request) {
         worker = ProductsWorker()
         worker?.fetchProductByCategoryId(categoryId: categoriaId, completionHandler: { produtos in
             let response = Products.Load.Response(produtos: produtos)
@@ -39,4 +41,13 @@ class ProductsInteractor: ProductsBusinessLogic, ProductsDataStore
         })
         
     }
+    
+    func doLoadDetailProducts(request: Products.DetailProduct.Request) {
+        let product = request.product
+        productId = product[0].id
+        print("ProductId:\(productId)")
+        let response = Products.DetailProduct.Response()
+        presenter?.presentDetailProduct(response: response)
+    }
+    
 }

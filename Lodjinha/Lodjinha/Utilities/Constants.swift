@@ -9,7 +9,7 @@
 
 import Foundation
 
-typealias CompletionHandler = (_ Success: Bool) -> ()
+typealias CompletionHandler = (_ Success: Bool, _ errorMessage :String?) -> ()
 
 // URL Constants
 let BASE_URL = "https://alodjinha.herokuapp.com"

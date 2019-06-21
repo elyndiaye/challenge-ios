@@ -15,49 +15,6 @@ class NetworkManager {
     
     private init() {}
     
-    
-    //user: String, pass: String
-    func loginUser(user: String, pass: String, completionHandler: @escaping ([Banner]) -> Void ) {
-        
-        let parameters = [
-            "user": user,
-            "password": pass
-        ]
-        
-        print("Entrou no loginUser")
-        
-        let arrayUserAccounts = [Banner]()
-        
-        Alamofire.request(BASE_URL, method: .post, parameters: parameters, encoding:  URLEncoding.httpBody).responseJSON { (response:DataResponse<Any>) in
-            
-            if response.result.error == nil {
-                guard let data = response.data else { return }
-                print(response.result.value)
-                
-                do {
-                    let decoder = JSONDecoder()
-                    //            let decodedUserAcconts = try decoder.decode(UserAccount.self, from: data)
-                    //             print(decodedUserAcconts.userAccount.userId)
-                    
-                    // let userAccount = try? newJSONDecoder().decode(UserAccount.self, from: jsonData)
-                    
-                    //              completionHandler([decodedUserAcconts])
-                    //   print(completionHandler(decodedUserAcconts))
-                } catch let error {
-                    print(error)
-                    completionHandler(arrayUserAccounts)
-                    debugPrint(response.result.error as Any)
-                }
-                
-                //completion(true)
-            } else {
-                //  completion(false)
-                debugPrint(response.result.error as Any)
-            }
-        }
-    }
-    
-    
     func getBanners(completionHandler: @escaping ([Banner]) -> Void ) {
         Alamofire.request(URL_BANNER, method: .get, parameters: nil, encoding: JSONEncoding.default).responseJSON { (response:DataResponse<Any>) in
             
@@ -65,18 +22,12 @@ class NetworkManager {
             
             if response.result.error == nil {
                 guard let data = response.data else { return }
-                print(response.result.value)
                 
                 do {
                     let decoder = JSONDecoder()
                     let decodedBanners = try decoder.decode(Banner.self, from: data)
                     
-                    //print(decodedBanners)
-                    //print(decodedStatements.statementList[0].title,.data[0].urlImagem)
-                    
-                    
                     completionHandler([decodedBanners])
-                    //completion(true)
                     //   print(completionHandler(decodedUserAcconts))
                 } catch let error {
                     print(error)
@@ -84,12 +35,9 @@ class NetworkManager {
                     debugPrint(response.result.error as Any)
                 }
             } else {
-                //  completion(false)
                 debugPrint(response.result.error as Any)
             }
-            
-        } // FIM DA
-        
+        }
     }
     
     func getCategory(completionHandler: @escaping ([Categoria]) -> Void ) {
@@ -99,7 +47,6 @@ class NetworkManager {
             
             if response.result.error == nil {
                 guard let data = response.data else { return }
-                print(response.result.value)
                 
                 do {
                     let decoder = JSONDecoder()
@@ -110,7 +57,6 @@ class NetworkManager {
                     
                     
                     completionHandler([decodedCategories])
-                    //completion(true)
                     //   print(completionHandler(decodedUserAcconts))
                 } catch let error {
                     print(error)
@@ -118,11 +64,9 @@ class NetworkManager {
                     debugPrint(response.result.error as Any)
                 }
             } else {
-                //  completion(false)
                 debugPrint(response.result.error as Any)
             }
-            
-        } // FIM DA
+        }
     }
     
     func getMoreSales(completionHandler: @escaping ([ProdutosMaisVendidos]) -> Void ) {
@@ -150,7 +94,7 @@ class NetworkManager {
                 debugPrint(response.result.error as Any)
             }
             
-        } // FIM DA
+        }
     }
     
     func getProductById(withProductId productId: String, completionHandler: @escaping ([ProdutosById]) -> Void ) {
@@ -160,7 +104,6 @@ class NetworkManager {
             
             if response.result.error == nil {
                 guard let data = response.data else { return }
-                print(response.result.value)
                 
                 do {
                     let decoder = JSONDecoder()
@@ -170,12 +113,42 @@ class NetworkManager {
                 } catch let error {
                     print(error)
                     completionHandler(arrayProdutoById)
-                    debugPrint(response.result.error as Any)
-                }
+                    debugPrint(response.result.error as Any) }
             } else {
                 debugPrint(response.result.error as Any)
             }
+        }
+    }
+    
+    func reserveProduct(withProductId productId: String, completion: @escaping CompletionHandler) {
+        
+        print("Entrou no reservaer")
+        
+        Alamofire.request("\(URL_PRODUTO)/\(productId)", method: .post, parameters: nil, encoding:  URLEncoding.httpBody).responseJSON { (response:DataResponse<Any>) in
             
+            if response.result.error == nil {
+                guard let data = response.data else { return }
+                print(response.result.value)
+                do {
+                    print("Passou")
+                    completion(true, "OK")
+                } catch let error {
+                    print(error)
+                    // completionHandler(arrayUserAccounts)
+                    debugPrint(response.result.error as Any)
+                    completion(false, "Não foi possivel reservar o produto.")
+                }
+                
+            } else {
+                debugPrint(response.result.error as Any)
+                if let error = response.result.error as NSError?, error.domain == NSURLErrorDomain && error.code == NSURLErrorNotConnectedToInternet {
+                    completion(false, "A network error has occurred. Check your Internet connection and try again later.")
+                    print(error)
+                }
+                completion(false, "Não foi possivel reservar o produto")
+                print(response.response?.statusCode as Any)
+                debugPrint(response.result.error as Any)
+            }
         }
     }
     

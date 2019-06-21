@@ -24,6 +24,8 @@ protocol DetailProductDataStore
 
 class DetailProductInteractor: DetailProductBusinessLogic, DetailProductDataStore
 {
+    
+    
     var presenter: DetailProductPresentationLogic?
     var worker: DetailProductWorker?
     var productId: Int = 0
@@ -40,3 +42,4 @@ class DetailProductInteractor: DetailProductBusinessLogic, DetailProductDataStor
         
     }
 }
+

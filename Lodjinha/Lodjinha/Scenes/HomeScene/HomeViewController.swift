@@ -112,7 +112,7 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-       // self.tabBarController?.tabBar.isHidden = true
+        // self.tabBarController?.tabBar.isHidden = true
     }
     
     func addNavBarImage() {
@@ -136,7 +136,7 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
         arrayBanners = viewModel.banners
         arrayCategories = viewModel.categories
         arrayProdutosMaisVendidos = viewModel.produtosMaisVendidos
-    
+        
         DispatchQueue.main.async {
             self.bannerCollectionView.reloadData()
         }
@@ -305,13 +305,7 @@ extension HomeViewController: UITableViewDelegate {
         if arrayProdutosMaisVendidos.isEmpty{}else{
             let product = arrayProdutosMaisVendidos[0].data[indexPath.row]
             let request = HomeScenes.DetailProduct.Request(product: [product])
-            print("\request=(request)")
             interactor?.doLoadDetailProducts(request: request)
-        //        let post = arrayPosts[indexPath.row]
-        //        //Requisicao
-        //        let request = PostScene.Comments.Request(post:post)
-        //        //Chamando o interactor falando que queremos carregar os dados mandando a linha do post na requisicao
-        //        interactor?.doLoadComments(request: request)
         }
     }
 }

@@ -22,15 +22,18 @@ class DetailProductViewController: UIViewController, DetailProductDisplayLogic
     var interactor: DetailProductBusinessLogic?
     var router: (NSObjectProtocol & DetailProductRoutingLogic & DetailProductDataPassing)?
     
+    
     @IBOutlet weak var productImageView: UIImageView!
     
     @IBOutlet weak var productLbl: UILabel!
     @IBOutlet weak var precoDeLbl: UILabel!
     @IBOutlet weak var precoPor: UILabel!
     @IBOutlet weak var descriptionTxt: UITextView!
+    @IBOutlet weak var btnReservar: RoundedButton!
     
     
     var arrayProduto = [ProdutosById]()
+    var productId = 0
     
     // MARK: Object lifecycle
     
@@ -101,7 +104,6 @@ class DetailProductViewController: UIViewController, DetailProductDisplayLogic
     func displayInitialData(viewModel: DetailProduct.Load.ViewModel)
     {
         arrayProduto = viewModel.produtos
-        print("Produto:\(arrayProduto)")
         if arrayProduto.isEmpty{
             title = "Produto"
             productImageView.kf.indicatorType = .activity
@@ -119,7 +121,36 @@ class DetailProductViewController: UIViewController, DetailProductDisplayLogic
                 productImageView.kf.indicatorType = .activity
                 productImageView.kf.setImage(with: image)
             }
+            productId = arrayProduto[0].id
         }
     }
+    
+    
+    @IBAction func btnReservarPressed(_ sender: Any) {
+        btnReservar.isEnabled = false
+        var status = 0
+        NetworkManager.shared.reserveProduct(withProductId: "\(productId)"){ (success,errorMessage) in
+            if success{
+                let success = success
+                self.EmptyTextField(text: "", message: "Produto reservado com sucesso")
+                self.btnReservar.isEnabled = true
+                status = 1
+            }
+            else{
+                let message = errorMessage
+                self.EmptyTextField(text: "Erro ao reservar o produto", message: message)
+                print(message)
+            }
+            
+        }
+        
+    }
+    
+    func EmptyTextField(text: String, message: String?){
+        let alert = UIAlertController(title: text, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: {(action:UIAlertAction!) in
+            self.navigationController?.popViewController(animated: true)
+        }))
+        self.present(alert, animated: true)
+    }
 }
-

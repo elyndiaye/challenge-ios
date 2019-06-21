@@ -282,6 +282,9 @@
                                         <real key="value" value="4"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="btnReservarPressed:" destination="NEW-ZU-AUz" eventType="touchUpInside" id="Kzb-nO-gas"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -302,6 +305,7 @@
                         <viewLayoutGuide key="safeArea" id="DM1-2h-wgh"/>
                     </view>
                     <connections>
+                        <outlet property="btnReservar" destination="pO9-gM-nGf" id="sp5-4a-x79"/>
                         <outlet property="descriptionTxt" destination="o0k-Ht-vYC" id="ECu-FI-KSY"/>
                         <outlet property="precoDeLbl" destination="JfN-JK-WwF" id="TVQ-VF-O3F"/>
                         <outlet property="precoPor" destination="7pj-nM-LVp" id="I5C-Lx-BBj"/>

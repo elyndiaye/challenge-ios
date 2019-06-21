@@ -50,7 +50,6 @@ class HomeInteractor: HomeBusinessLogic, HomeDataStore
     
     func doLoadDetailProducts(request: HomeScenes.DetailProduct.Request) {
         let product = request.product
-        print("Request.product:\(product)")
           productId = product[0].id
         print("ProductId:\(productId)")
         let response = HomeScenes.DetailProduct.Response()

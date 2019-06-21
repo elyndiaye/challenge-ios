@@ -228,9 +228,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         if collectionView == self.categoryCollectionView {
             if arrayCategories.isEmpty{}else{
                 let categoria = arrayCategories[0].data[indexPath.row]
-                print("categoria da cell\(categoria)")
                 let request = HomeScenes.ProductsList.Request(categoria: [categoria])
-                print("request\(request)")
                 interactor?.doLoadProductsList(request: request)
             }
         }

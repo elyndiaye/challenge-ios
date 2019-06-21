@@ -82,8 +82,7 @@ class ProductsViewController: UIViewController, ProductsDisplayLogic
         super.viewDidLoad()
         // loadInitialData()
         title = "Produtos"
-        print("Chamou Produtos Lista")
-        print("Print da ProductView:\(router?.dataStore?.categoriaId)")
+        print("Chamou Produtos Lista:\(router?.dataStore?.categoriaId)")
         
         productsTableView.delegate = self
         productsTableView.dataSource = self

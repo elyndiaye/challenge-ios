@@ -132,15 +132,10 @@ class NetworkManager {
             
             if response.result.error == nil {
                 guard let data = response.data else { return }
-                print(response.result.value)
                 
                 do {
                     let decoder = JSONDecoder()
                     let decodedProdutosMaisVendidos = try decoder.decode(ProdutosMaisVendidos.self, from: data)
-                    
-                    // print(decodedProdutosMaisVendidos)
-                    print(decodedProdutosMaisVendidos.data[0].nome)
-                    
                     
                     completionHandler([decodedProdutosMaisVendidos])
                     //completion(true)
@@ -156,6 +151,32 @@ class NetworkManager {
             }
             
         } // FIM DA
+    }
+    
+    func getProductById(withProductId productId: String, completionHandler: @escaping ([ProdutosById]) -> Void ) {
+        Alamofire.request("\(URL_PRODUTO)/\(productId)", method: .get, parameters: nil, encoding: JSONEncoding.default).responseJSON { (response:DataResponse<Any>) in
+            print("ProductById")
+            let arrayProdutoById = [ProdutosById]()
+            
+            if response.result.error == nil {
+                guard let data = response.data else { return }
+                print(response.result.value)
+                
+                do {
+                    let decoder = JSONDecoder()
+                    let decodedProdutoById = try decoder.decode(ProdutosById.self, from: data)
+                    print(decodedProdutoById.id)
+                    completionHandler([decodedProdutoById])
+                } catch let error {
+                    print(error)
+                    completionHandler(arrayProdutoById)
+                    debugPrint(response.result.error as Any)
+                }
+            } else {
+                debugPrint(response.result.error as Any)
+            }
+            
+        }
     }
     
 }

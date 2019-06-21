@@ -17,12 +17,14 @@ struct Produtos: Codable {
 
 // MARK: - Datum
 struct DataProdutos: Codable {
-    let categoria: CategoriaProdutos
-    let descricao: String
+    
     let id: Int
     let nome: String
-    let precoDe, precoPor: Int
     let urlImagem: String
+    let descricao: String
+    let precoDe: Int
+    let precoPor: Double
+    let categoria: CategoriaProdutos
 }
 
 // MARK: - Categoria

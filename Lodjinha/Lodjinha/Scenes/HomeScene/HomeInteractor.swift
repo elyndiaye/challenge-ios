@@ -15,37 +15,46 @@ import UIKit
 protocol HomeBusinessLogic
 {
     func doLoadInitialData(request: HomeScenes.Load.Request)
+    func doLoadDetailProducts(request: HomeScenes.DetailProduct.Request)
 }
 
 protocol HomeDataStore
 {
-    //var name: String { get set }
+    var productId: Int { get set }
 }
 
 class HomeInteractor: HomeBusinessLogic, HomeDataStore
 {
     var presenter: HomePresentationLogic?
     var worker: HomeWorker?
-    //var name: String = ""
+    var productId: Int = 0
     
     // MARK: Do something
     
-    func doLoadInitialData(request: HomeScenes.Load.Request)
-    {
+    func doLoadInitialData(request: HomeScenes.Load.Request) {
         worker = HomeWorker()
         worker?.fetchBanners(completionHandler: { (banners) in
             self.worker?.fetchCategory(completionHandler: { (categories) in
                 self.worker?.fetchProductsMoreSales(completionHandler: { (produtosMaisVendidos) in
-                //Prepara uma resposta que vai ser enviada para o PRESENTER
-                //Response serve para mandar os posts
+                    //Prepara uma resposta que vai ser enviada para o PRESENTER
+                    //Response serve para mandar os posts
                     let response = HomeScenes.Load.Response(banners: banners, categories: categories, produtosMaisVendidos: produtosMaisVendidos)
-                self.presenter?.presentInitalDatas(response: response)
-            })            
+                    self.presenter?.presentInitalDatas(response: response)
+                })
+                
+            })
             
         })
         
-        })
-        
+    }
+    
+    func doLoadDetailProducts(request: HomeScenes.DetailProduct.Request) {
+        let product = request.product
+        print("Request.product:\(product)")
+          productId = product[0].id
+        print("ProductId:\(productId)")
+        let response = HomeScenes.DetailProduct.Response()
+        presenter?.presentDetailProduct(response: response)
     }
     
 }

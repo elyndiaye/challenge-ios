@@ -17,6 +17,7 @@ import Kingfisher
 protocol HomeDisplayLogic: class {
     
     func displayInitialDatas(viewModel: HomeScenes.Load.ViewModel)
+    func displayDetailProduct(viewModel: HomeScenes.DetailProduct.ViewModel)
 }
 
 class HomeViewController: UIViewController, HomeDisplayLogic {
@@ -84,11 +85,12 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
     // MARK: View lifecycle
     
     override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
         loadInitalData()
     }
     
-    override func viewDidLoad()
-    {
+    override func viewDidLoad() {
+        self.tabBarController?.tabBar.isHidden = false
         super.viewDidLoad()
         
         addNavBarImage()
@@ -107,6 +109,10 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
         maisVendidosTableView.delegate = self
         maisVendidosTableView.dataSource = self
         
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+       // self.tabBarController?.tabBar.isHidden = true
     }
     
     func addNavBarImage() {
@@ -143,6 +149,10 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
             self.maisVendidosTableView.reloadData()
         }
         
+    }
+    
+    func displayDetailProduct(viewModel: HomeScenes.DetailProduct.ViewModel) {
+        router?.routeToDetailProduct()
     }
     
 }
@@ -292,12 +302,17 @@ extension HomeViewController: UITableViewDataSource {
 extension HomeViewController: UITableViewDelegate {
     //Implementando o Clique do botao
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if arrayProdutosMaisVendidos.isEmpty{}else{
+            let product = arrayProdutosMaisVendidos[0].data[indexPath.row]
+            let request = HomeScenes.DetailProduct.Request(product: [product])
+            print("\request=(request)")
+            interactor?.doLoadDetailProducts(request: request)
         //        let post = arrayPosts[indexPath.row]
         //        //Requisicao
         //        let request = PostScene.Comments.Request(post:post)
         //        //Chamando o interactor falando que queremos carregar os dados mandando a linha do post na requisicao
         //        interactor?.doLoadComments(request: request)
-        //
+        }
     }
 }
 
